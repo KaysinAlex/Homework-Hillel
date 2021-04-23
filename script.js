@@ -1,8 +1,6 @@
-// let userName = prompt('');
-// alert(`Hello, ${userName}! How are you?`);
+let userName = 'What is your name?';
+let yourName = prompt(userName);
+alert(`Hello,` + yourName + `! How are you?`)
+//alert(`Hello, ${yourName}! How are you?`);
 
-let userName = prompt('What is your name?', '');
-alert(`Hello, ${userName}! How are you?`);
 
-// let userName = prompt('What is your name?');
-// alert(`Hello, ` + userName + `! How are you?`);
