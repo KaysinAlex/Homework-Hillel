@@ -3,18 +3,25 @@
 // alert(`Hello,` + userName + `! How are you?`);
 // alert(`Hello, ${userName}! How are you?`);
 
-let operator = prompt('Введите одно из значение математического оператора + - * /');
-let firstNumber = prompt('ВВедите первое число');
-let secondNumber = prompt('Введите второе число');
 
-if (operator =='-') {
-  alert(firstNumber - secondNumber);
-}
-// else if (operator == '+') {
-// alert(firstNumber + secondNumber);
-// } else if (operator == '*') {
-// alert(firstNumber * secondNumber);
-// } else if (operator == '/') {
-// alert(firstNumber / secondNumber);
-// }
-//С помощью alert выводим результат действия со всеми операндами (Н-р "2 + 3 = 5" )
+let operator = prompt(
+  "Введите одно из значений математического оператора + - * /"
+);
+let firstNumber = Number(prompt("Введите первое число"));
+let secondNumber = Number(prompt("Введите второе число"));
+
+const getMathAnswer = (optr) => {
+  if (operator === "-") {
+    return firstNumber - secondNumber;
+  } else if (operator === "+") {
+    return firstNumber + secondNumber;
+  } else if (operator === "*") {
+    return firstNumber * secondNumber;
+  } else if (operator === "/") {
+    return firstNumber / secondNumber;
+  }
+};
+
+let formulaStr = `${firstNumber} ${operator} ${secondNumber} = ${getMathAnswer(operator)}`;
+
+alert(formulaStr);
