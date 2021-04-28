@@ -4,9 +4,7 @@
 // alert(`Hello, ${userName}! How are you?`);
 
 
-let operator = prompt(
-  "Введите одно из значений математического оператора + - * /"
-);
+let operator = prompt(  "Введите одно из значений математического оператора + - * /");
 let firstNumber = Number(prompt("Введите первое число"));
 let secondNumber = Number(prompt("Введите второе число"));
 
