@@ -22,4 +22,36 @@ const getMathAnswer = (optr) => {
 
 let formulaStr = `${firstNumber} ${operator} ${secondNumber} = ${getMathAnswer(operator)}`;
 
-alert(formulaStr);
+alert(formulaStr); 
+
+
+/* let operator = prompt('Введите одно из значений математического оператора + - * /');
+let firstNumber = Number(prompt('Введите первое число')); 
+let secondNumber = Number(prompt('Введите второе число'));
+
+function sum(firstNumber, secondNumber) {
+  return firstNumber + secondNumber;
+  }
+function minus(firstNumber, secondNumber) {
+  return firstNumber - secondNumber;
+}
+  
+function divided(firstNumber, secondNumber) {
+  return firstNumber / secondNumber;
+}
+
+function times(firstNumber, secondNumber) {
+  return firstNumber * secondNumber;
+}
+  
+
+if (operator === '+') {
+  alert(`${firstNumber} + ${secondNumber} = ${sum(firstNumber, secondNumber)}.`);
+} else if (operator === '-') {
+    alert(`${firstNumber} - ${secondNumber}' = ${minus(firstNumber, secondNumber)}.`);
+} else if (operator === '/') {
+    alert(`${firstNumber} / ${secondNumber} = ${divided(firstNumber , secondNumber)}.`);
+} else if (operator === '*') {
+    alert(`${firstNumber} * ${secondNumber} = ${times(firstNumber , secondNumber)}.`);
+}
+*/
