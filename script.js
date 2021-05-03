@@ -84,21 +84,38 @@ function getNumber2() {
 }
 const number2 = getNumber2();
 
-let result = 0;
+function getCalculate() {
+  
   switch (operator) {
   case '+':
-    result = number1 + number2;
-    break   
+   return  number1 + number2;
   case '-':
-    result = number1 - number2;
-    break
+   return  number1 - number2;
   case '*':
-    result = number1 * number2;
-    break
+   return  number1 * number2;
   case '/':
-    result = number1 / number2;
-    break
+   return  number1 / number2;
   }
 
+}
+const calculate = getCalculate();
 
-alert(`${number1} ${operator} ${number2} = ${result}`); 
+
+/*let calculate = 0;
+  switch (operator) {
+  case '+':
+    calculate = number1 + number2;
+    break   
+  case '-':
+    calculate = number1 - number2;
+    break
+  case '*':
+    calculate = number1 * number2;
+    break
+  case '/':
+    calculate = number1 / number2;
+    break
+  }
+*/
+
+alert(`${number1} ${operator} ${number2} = ${calculate}`); 
