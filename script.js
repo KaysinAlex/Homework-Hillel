@@ -60,7 +60,7 @@ function getOperator() {
   let answer = '';
   do {
     answer = prompt('Введите один из операторов: + - * /');
-  } while (answer !== '+'&& answer !== '-'&&answer !== '*'&&answer !== '/');
+  } while (answer !== '+'&& answer !== '-'&& answer !== '*'&& answer !== '/');
   return answer;
 }
 const operator = getOperator();
