@@ -3,8 +3,8 @@
 // alert(`Hello,` + userName + `! How are you?`);
 // alert(`Hello, ${userName}! How are you?`);
 
-
-let operator = prompt(  "Введите одно из значений математического оператора + - * /");
+ // Homework 2
+/*let operator = prompt(  "Введите одно из значений математического оператора + - * /");
 let firstNumber = Number(prompt("Введите первое число"));
 let secondNumber = Number(prompt("Введите второе число"));
 
@@ -24,8 +24,8 @@ let formulaStr = `${firstNumber} ${operator} ${secondNumber} = ${getMathAnswer(o
 
 alert(formulaStr); 
 
-
-/* let operator = prompt('Введите одно из значений математического оператора + - * /');
+// Homework 2 
+ let operator = prompt('Введите одно из значений математического оператора + - * /');
 let firstNumber = Number(prompt('Введите первое число')); 
 let secondNumber = Number(prompt('Введите второе число'));
 
@@ -55,3 +55,50 @@ if (operator === '+') {
     alert(`${firstNumber} * ${secondNumber} = ${times(firstNumber , secondNumber)}.`);
 }
 */
+// Homework 3
+function getOperator() {
+  let answer = '';
+  do {
+    answer = prompt('Введите один из операторов: + - * /');
+  } while (answer !== '+'&& answer !== '-'&&answer !== '*'&&answer !== '/');
+  return answer;
+}
+const operator = getOperator();
+
+function getNumber1() {
+  let answerNum1 = '';
+  do {
+    answerNum1 = +prompt('Введите первое число');
+  } while (isNaN(answerNum1));
+  return answerNum1
+}
+const number1 = getNumber1();
+
+
+function getNumber2() {
+  let answerNum2 = '';
+  do {
+    answerNum2 = +prompt('Введите второе число');
+  } while (isNaN(answerNum2));
+  return answerNum2
+}
+const number2 = getNumber2();
+
+let result = 0;
+  switch (operator) {
+  case '+':
+    result = number1 + number2;
+    break   
+  case '-':
+    result = number1 - number2;
+    break
+  case '*':
+    result = number1 * number2;
+    break
+  case '/':
+    result = number1 / number2;
+    break
+  }
+
+
+alert(`${number1} ${operator} ${number2} = ${result}`); 
