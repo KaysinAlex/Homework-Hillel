@@ -99,23 +99,7 @@ function getCalculate() {
 
 }
 const calculate = getCalculate();
+const result =`${number1} ${operator} ${number2} = ${calculate}`
 
 
-/*let calculate = 0;
-  switch (operator) {
-  case '+':
-    calculate = number1 + number2;
-    break   
-  case '-':
-    calculate = number1 - number2;
-    break
-  case '*':
-    calculate = number1 * number2;
-    break
-  case '/':
-    calculate = number1 / number2;
-    break
-  }
-*/
-
-alert(`${number1} ${operator} ${number2} = ${calculate}`); 
+alert(result); 
