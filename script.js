@@ -1,3 +1,85 @@
+// Решение дз 4
+function getOperator(something) {
+   let answer = '';
+   do {
+     answer = prompt(something);
+   } while (!isOperatorValid(answer));
+   return answer;
+ }
+
+ function isOperatorValid(operator) {
+   return (
+     operator === '+' ||
+     operator === '-' ||
+     operator === '*' ||
+     operator === '/'
+    );
+ }
+
+   function getQuantityOperands(something) {
+       let quantityOperands = '';
+     do {
+     quantityOperands = prompt(something);
+     } while (!isQuantityValid(quantityOperands));
+  
+     return +(quantityOperands);
+ }
+
+     function isQuantityValid(value) {
+   return !isNaN(value) && (value >=2 && value <=5);
+ }
+
+ function getOperand(something) {
+   let answer = '';
+   do {
+     answer = prompt(something);
+   } while (!isOperandValid(answer));
+   return +answer;
+ }
+ function isOperandValid(value) {
+   return !isNaN(value) && value !== null && value !== '';
+ }
+
+function calc(quantityOperands, operator) {
+  let calcResult = '';
+  let calculateOperand = '';
+  for (let operand = 1; operand <= quantityOperands; operand++) {
+    const enterOperand = getOperand(`Введите число ${operand}`);
+    if (calcResult === '') {
+      calcResult = enterOperand;
+      calculateOperand = `${enterOperand}`;
+    } else {
+      switch (operator) {
+        case '+':
+          calcResult = calcResult + enterOperand;
+          calculateOperand = `${calculateOperand} + ${enterOperand}`;
+          break;
+        case '*':
+          calcResult = calcResult * enterOperand;
+          calculateOperand = `${calculateOperand} * ${enterOperand}`;
+          break;
+        case '-':
+          calcResult = calcResult - enterOperand;
+          calculateOperand = `${calculateOperand} - ${enterOperand}`;
+          break;
+        case '/':
+          calcResult = calcResult / enterOperand;
+          calculateOperand = `${calculateOperand} / ${enterOperand}`;
+          break;
+      }
+    }
+  }
+     calculateOperand = `${calculateOperand} = ${calcResult}`;
+
+     alert(calculateOperand);
+}
+ 
+ const operator = getOperator('Введите операнд  + - * /');
+ const quantityOperands = getQuantityOperands('Введите колличество операндовот 2 до 5');
+ calc(quantityOperands, operator);
+
+
+
 // let question = 'What is your name?';
 // let userName = prompt(question);
 // alert(`Hello,` + userName + `! How are you?`);
@@ -56,7 +138,7 @@ if (operator === '+') {
 }
 */
 // Homework 3
-function getOperator() {
+/*function getOperator() {
   let answer = '';
   do {
     answer = prompt('Введите один из операторов: + - * /');
@@ -103,3 +185,4 @@ const result =`${number1} ${operator} ${number2} = ${calculate}`
 
 
 alert(result); 
+*/
