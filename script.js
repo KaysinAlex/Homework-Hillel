@@ -1,4 +1,60 @@
-// Решение дз 4
+// ДЗ
+function getOperator(questionOperator) {
+   let answer = '';
+   do {
+     answer = prompt(questionOperator)
+   } while (!isOperatorValid(answer));
+   return answer;
+  
+ }
+ function isOperatorValid(operator) {
+    return (
+     operator === '+' ||
+     operator === '-' ||
+     operator === '*' ||
+     operator === '/');
+}
+  
+function getOperand(questionOperand) {
+  let arrOperands = '';
+  do {
+    arrOperands = prompt(questionOperand);
+  } while (arrOperands === null || arrOperands === '');
+  arrOperands = arrOperands.split(',');
+  return arrOperands.map(Number).filter(Number);
+}
+
+function getCalculate(operator) {
+  sum = numsOperand[0];
+  for (let i = 1; i < numsOperand.length; i++) {
+    switch (operator) {
+      case "+":
+        sum = sum + numsOperand[i];
+        break;
+      case "-":
+        sum = sum - numsOperand[i];
+        break;
+      case "*":
+        sum = sum * numsOperand[i];
+        break;
+      case "/":
+        sum = sum / numsOperand[i];
+        break;
+    }
+  }
+  return sum;
+}
+
+
+
+const operator = getOperator('Введите оператор: + - * /');
+let numsOperand = getOperand('Введите любое количество операндов через запятую');
+let result = getCalculate(operator);
+alert(`${numsOperand.join( operator)} = ${result}`);
+
+
+
+/* Решение дз 4
 function getOperator(something) {
    let answer = '';
    do {
@@ -78,7 +134,7 @@ function calc(quantityOperands, operator) {
  const quantityOperands = getQuantityOperands('Введите колличество операндовот 2 до 5');
  calc(quantityOperands, operator);
 
-
+*/
 
 // let question = 'What is your name?';
 // let userName = prompt(question);
