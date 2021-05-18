@@ -21,28 +21,28 @@ function getOperand(questionOperand) {
     arrOperands = prompt(questionOperand);
   } while (arrOperands === null || arrOperands === '');
   arrOperands = arrOperands.split(',');
-  return arrOperands.map(Number).filter(Number);
+  return arrOperands.map(Number).filter(isFinite);
 }
 
 function getCalculate(operator) {
-  sum = numsOperand[0];
+  calc = numsOperand[0];
   for (let i = 1; i < numsOperand.length; i++) {
     switch (operator) {
       case "+":
-        sum = sum + numsOperand[i];
+        calc = calc + numsOperand[i];
         break;
       case "-":
-        sum = sum - numsOperand[i];
+        calc = calc - numsOperand[i];
         break;
       case "*":
-        sum = sum * numsOperand[i];
+        calc = calc * numsOperand[i];
         break;
       case "/":
-        sum = sum / numsOperand[i];
+        calc = calc / numsOperand[i];
         break;
     }
   }
-  return sum;
+  return calc;
 }
 
 
