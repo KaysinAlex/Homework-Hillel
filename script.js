@@ -1,4 +1,68 @@
-// ДЗ
+// ДЗ Студенты
+
+const students = [
+    {
+        id:10,
+        name: 'John Smith',
+        marks: [10, 8, 6, 9, 8, 7 ]
+    },
+    {
+        id:11,
+        name: 'John Doe',
+        marks: [ 9, 8, 7, 6, 7 ]
+    },
+    {
+        id:12,
+        name: 'Thomas Anderson',
+        marks: [6, 7, 10, 8 ]
+    },
+    {
+        id:13,
+        name: 'Jean-Baptiste Emanuel Zorg',
+        marks: [10, 9, 8, 9 ]
+    }
+]
+
+const averageGroupMark = function (students) {
+  let sum = 0;
+  let markCount = 0;
+    // console.log('sum', sum);
+     //console.log('markCount', markCount);
+  students.forEach(currentStudent => {
+    markCount = markCount + currentStudent.marks.length;
+    currentStudent.marks.forEach(currentMark => {
+      sum += currentMark;
+       //      console.log('sum', sum);
+    })
+  })
+  return sum / markCount;
+}
+
+function averageStudentMark(student) {
+ // console.log('in averageStudentMark', student)
+  let sum = 0;
+  //   for (let i = 0; i <= student.marks.length - 1; i++) {
+  //     sum += student.marks.length;
+  //   } return sum / student.marks.length
+  // }
+  student.marks.forEach(currentMark => {
+    sum += currentMark;
+
+  }); const averageStudentMark = sum / student.marks.length;
+  return {
+    ...student,
+    averageStudentMark
+    };
+  }
+  
+
+
+console.log(averageStudentMark(students[3]));
+console.log(averageGroupMark(students));
+
+
+
+/* ДЗ
 function getOperator(questionOperator) {
    let answer = '';
    do {
@@ -52,6 +116,8 @@ let numsOperand = getOperand('Введите любое количество о�
 let result = getCalculate(operator);
 alert(`${numsOperand.join( operator)} = ${result}`);
 
+
+*/
 
 
 /* Решение дз 4
