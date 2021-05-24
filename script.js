@@ -22,9 +22,7 @@ function getOperator() {
     answer = prompt('Введите любое количество операндов через запятую');
   } while (!isOperandsValid(answer));
 
-   return answer.split(',').filter((i) => {
-     return i % 2 === 1;
-  })
+   return answer.split(',').filter((i) => i % 2 === 1)
   }
  function isOperatorValid(str) {
     return (
