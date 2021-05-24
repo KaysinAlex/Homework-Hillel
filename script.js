@@ -1,6 +1,88 @@
+'use scrict';
+/* Дз 8. Калькуьор с помощью массивов
+Добавлено: 21.05.2021 21:16
+
+ 1) с помощью промта спрашиваем у пользователя что он хочет сделать (+ - / *). Спрашиваем до тех пор пока он введет допустимое значение
+2) спрашиваем у пользователя операнды, он их вводит в одном промте через запятую. То что введет пользователь не должно быть пустой строкой или null.
+3) Отфильтровываем все четные и невалидные значение
+4) С помощью alert или console.log выводим результат действия (+ - / *) с отсавшимися операндами. Если один из операндов не число, то мы его просто пропускаем.
+Н-р "1 + 1 + 3 = 5" 
+ */
+
+function getOperator() {
+   let answer = '';
+   do {
+     answer = prompt('Введите оператор: + - * /')
+   } while (!isOperatorValid(answer));
+   return answer;
+}
+ function getOperands() {
+    let answer;
+   do {
+    answer = prompt('Введите любое количество операндов через запятую');
+  } while (!isOperandsValid(answer));
+
+   return answer.split(',').filter((i) => {
+     return i % 2 === 1;
+  })
+  }
+ function isOperatorValid(str) {
+    return (
+     str === '+' ||
+     str === '-' ||
+     str === '*' ||
+     str === '/');
+}
+  
+function isOperandsValid(str) {
+  return str !== null && str !== '';
+ }
+
+function isValidOperand(num) {
+  return !isNaN(num);
+ }
+
+function calculate(operator, a, b) {
+  switch (operator) {
+    case '+':
+      return a + b;
+    case '-':
+      return a - b;
+    case '*':
+      return a * b;
+    case '/':
+      return a / b;
+   }
+}
+ 
+const operator = getOperator();
+const operands = getOperands();
+//console.log(operands);
+let result = null;
+let expression = '';
+
+for (let i = 0; i < operands.length; i++) {
+  const operand = +operands[i];
+
+  if (!isValidOperand(operand)) {
+    continue;
+  } 
+  if (result === null) {
+      result = operand;
+      expression = operand;
+      continue;
+  }
+  
+   result = calculate(operator, result, operand);
+   expression += `${operator} ${operand} `;
+}
+  
+alert(`${expression} = ${result}`);
+
+
 // ДЗ Студенты
 
-const students = [
+/* const students = [
     {
         id:10,
         name: 'John Smith',
@@ -59,7 +141,7 @@ function averageStudentMark(student) {
 
 console.log(averageStudentMark(students[3]));
 console.log(averageGroupMark(students));
-
+ */
 
 
 /* ДЗ
