@@ -1,4 +1,25 @@
 'use scrict';
+//дз 9 рекурсия
+
+function createCalculator(value) {
+ 
+  return {
+    sub: (num) => (value -= num),
+    add: (num) => (value += num),
+    div: (num) => (value /= num),
+    mult: (num) => (value *= num),
+    set: (num) => (value = num),
+  };
+} 
+
+const calc = createCalculator(100);
+console.log(calc.sub(50));
+console.log(calc.add(45));
+console.log(calc.set(500));
+console.log(calc.div(100));
+console.log(calc.mult(105));
+
+
 /* Дз 8. Калькуьор с помощью массивов
 Добавлено: 21.05.2021 21:16
 
@@ -7,7 +28,7 @@
 3) Отфильтровываем все четные и невалидные значение
 4) С помощью alert или console.log выводим результат действия (+ - / *) с отсавшимися операндами. Если один из операндов не число, то мы его просто пропускаем.
 Н-р "1 + 1 + 3 = 5" 
- */
+ 
 
 function getOperator() {
    let answer = '';
@@ -76,7 +97,7 @@ for (let i = 0; i < operands.length; i++) {
 }
   
 alert(`${expression} = ${result}`);
-
+*/
 
 // ДЗ Студенты
 
