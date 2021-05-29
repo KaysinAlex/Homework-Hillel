@@ -1,7 +1,29 @@
 'use scrict';
+//Дз 10 
+
+function getUserName() {
+  do {
+    answer = prompt('Введите Ваше имя');
+  } while (answer === null || answer === '');
+  return answer
+}
+const userName = getUserName();
+
+const header = document.getElementById('greeting');
+
+header.textContent = header.textContent + ` ${userName}!!!`;
+
+
+
+
+
+
+
+
+
 //дз 9 рекурсия
 
-function createCalculator(value) {
+/* function createCalculator(value) {
  
   return {
     sub: (num) => (value -= num),
@@ -18,7 +40,7 @@ console.log(calc.add(45));
 console.log(calc.set(500));
 console.log(calc.div(100));
 console.log(calc.mult(105));
-
+ */
 
 /* Дз 8. Калькуьор с помощью массивов
 Добавлено: 21.05.2021 21:16
