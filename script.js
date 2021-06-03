@@ -1,7 +1,75 @@
 'use scrict';
+
+
+// Дз 11 To do list
+
+const input = document.getElementById("block_form-input");
+const btn = document.getElementById("block_form-btn");
+const blockList = document.getElementById("block_list");
+
+
+   function createElements(text) {
+      const newElem = document.createElement("p");
+      const deleteSpan = document.createElement("span");
+
+      deleteSpan.className = "block_list-delete"
+      deleteSpan.textContent = "delete";
+      
+      newElem.className = "block_list-elem";
+      newElem.textContent = text;
+      newElem.appendChild(deleteSpan);
+      
+      deleteSpan.addEventListener("click", () => blockList.removeChild(newElem));
+      
+      blockList.appendChild(newElem);
+     }
+    
+      function clicked(e) {
+        e.preventDefault();
+          if (!(input.value === "" || input.value === "Enter: ")) {
+            createElements(input.value);
+            input.value = "Enter: ";
+          }
+        };
+
+
+        btn.addEventListener("click", clicked)
+        input.addEventListener("focus", () => input.value = "");
+
+        input.addEventListener("blur", function () {
+          if (input.value === "")
+            input.value = "Enter: ";
+          
+        });
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //Дз 10 
 
-function getUserName() {
+/* function getUserName() {
   do {
     answer = prompt('Введите Ваше имя');
   } while (answer === null || answer === '');
@@ -12,7 +80,7 @@ const userName = getUserName();
 const header = document.getElementById('greeting');
 
 header.textContent = header.textContent + ` ${userName}!!!`;
-
+ */
 
 
 
