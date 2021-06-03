@@ -24,13 +24,13 @@ const blockList = document.getElementById("block_list");
       blockList.appendChild(newElem);
      }
     
-      function clicked(e) {
-        e.preventDefault();
-          if (!(input.value === "" || input.value === "Enter: ")) {
-            createElements(input.value);
-            input.value = "Enter: ";
-          }
-        };
+        function clicked(e) {
+          e.preventDefault();
+            if (!(input.value === "" || input.value === "Enter: ")) {
+              createElements(input.value);
+              input.value = "Enter: ";
+            }
+          };
 
 
         btn.addEventListener("click", clicked)
