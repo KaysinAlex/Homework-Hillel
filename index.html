@@ -9,7 +9,47 @@
     <script src="./script.js" async></script>
 </head>
 <body>
-     <div id="container" class="container">
+<h1>Список контактов</h1>
+<table id="myTable" style="border: 1px solid black">
+
+    <tr>
+        <td>Имя</td>
+        <td>Фамилия</td>
+        <td>номер телефона</td>
+        <td>Удалить</td>
+
+    </tr>
+
+
+</table>
+
+        <input type="text" id="firstName" class="firstName" placeholder='Имя'>
+        <input type="text" id="lastName" class="lastName" placeholder='Фамилия'>
+        <input type="tel" id="phone" class="phone" placeholder='Номер телефона' />
+        <button id="btn" type="submit" class="btn" onclick="insRow('myTable')"
+            value="Insert row">добавить</button>
+
+<script id="delBtn" type="text/template">
+<button id= "del" type="submit" value="Delete" onclick="document.getElementById('myTable').deleteRow(0)">Удалить</button>
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     <!-- <div id="container" class="container">
          <h1>To do list</h1>
             <div id="block_form" class="block_form">
                 <form action="">
@@ -22,7 +62,7 @@
                 <div id="block_list" class="block_list">  
                 </div>
              </div>  
-     </div>
+     </div> -->
 
 </body>
 </html>

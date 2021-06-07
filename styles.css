@@ -1,4 +1,68 @@
+
 * {
+  box-sizing: border-box;
+}
+h1 {
+  text-align: center;
+  box-shadow: 0 0 5 0 rgb(red, green, blue);
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+h1 {
+  text-align: center;
+}
+.column {
+  float: left;
+  width: 25%;
+  padding: 10px;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.firstName {
+  width: 30%;
+}
+.lastName {
+  width: 30%;
+}
+.phone {
+  width: 30%;
+}
+
+.btn {
+  width: 8%;
+}
+#del {
+  width: 30%;
+  margin: 0%;
+}
+
+
+
+
+
+
+
+
+
+/* * {
   box-sizing: border-box;
 }
 body {
@@ -89,4 +153,4 @@ p {
   border-radius: 3px;
   color: white;
 }
-
+ */

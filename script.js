@@ -1,9 +1,36 @@
 'use scrict';
+// Дз 12 Список контактов
+const firstName = document.getElementById('firstName');
+const lastName = document.getElementById('lastName');
+const phone = document.getElementById('phone');
+const deletBtn = document.getElementById('delBtn').innerHTML;
+
+
+
+const contact = firstName + lastName + phone;
+function insRow(id) {
+  let x = document.getElementById(id).insertRow(0);
+  let y = x.insertCell(0);
+  let z = x.insertCell(1);
+  let w = x.insertCell(2);
+  let d = x.insertCell(3);
+  y.innerHTML = firstName.value;
+  z.innerHTML = lastName.value;
+  w.innerHTML = phone.value;
+  d.innerHTML = deletBtn;
+}
+
+
+
+
+
+
+
 
 
 // Дз 11 To do list
 
-const input = document.getElementById("block_form-input");
+/* const input = document.getElementById("block_form-input");
 const btn = document.getElementById("block_form-btn");
 const blockList = document.getElementById("block_list");
 
@@ -40,7 +67,7 @@ const blockList = document.getElementById("block_list");
           if (input.value === "")
             input.value = "Enter: ";
           
-        });
+        }); */
  
 
 
