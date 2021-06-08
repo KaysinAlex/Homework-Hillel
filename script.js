@@ -20,7 +20,22 @@ function onAddContactBtnClick() {
     resetForm();
   }
 }
+function onContactsListClick(e) {
+  
+  if (e.target.classList.contains('delete-btn')) {
+    const el = getContactRow(e.target);
+    deleteContact(el);
+  }
+}
 
+function getContactRow(el) {
+  log('deleteContact');
+  return el.closest('.contact-item');
+}
+
+function deleteContact(el) {
+  el.remove();
+}
 
 function isFormValid() {
   log('isFormValid')
