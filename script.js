@@ -1,25 +1,69 @@
 'use scrict';
 // Дз 12 Список контактов
-const firstName = document.getElementById('firstName');
-const lastName = document.getElementById('lastName');
-const phone = document.getElementById('phone');
-const deletBtn = document.getElementById('delBtn').innerHTML;
+log = console.log;
+const contactTemplate = document.getElementById('newContactTemplate').innerHTML;
+const contactsListEl = document.getElementById('contactsList');
+const nameInputEl = document.getElementById('nameInput');
+const surnameInputEl = document.getElementById('surnameInput');
+const phoneInputEl = document.getElementById('phoneInput');
 
+document
+  .getElementById('addContactBtn')
+  .addEventListener('click', onAddContactBtnClick);
 
+function onAddContactBtnClick() {
+  log('onAddContactBtnClick')
+  if (isFormValid()) {
+    const newContact = getFormData();
+    addContact(newContact);
 
-const contact = firstName + lastName + phone;
-function insRow(id) {
-  let x = document.getElementById(id).insertRow(0);
-  let y = x.insertCell(0);
-  let z = x.insertCell(1);
-  let w = x.insertCell(2);
-  let d = x.insertCell(3);
-  y.innerHTML = firstName.value;
-  z.innerHTML = lastName.value;
-  w.innerHTML = phone.value;
-  d.innerHTML = deletBtn;
+    resetForm();
+  }
 }
 
+
+function isFormValid() {
+  log('isFormValid')
+  return (
+    !isEmpty(nameInputEl.value) &&
+    !isEmpty(surnameInputEl.value) &&
+    !isEmpty(phoneInputEl.value)
+  );
+}
+
+function isEmpty(str) {
+  log('isEmpty');
+  return str === '' || str === null;
+  }
+
+function addContact(contact) {
+  log('addContact');
+  const newContactHtml = getContactRowHtml(contact);
+  contactsListEl.insertAdjacentHTML('beforeend', newContactHtml);
+}
+
+function getContactRowHtml(contact) {
+  log('getContactRowHtml');
+  return contactTemplate
+    .replace('{{name}}', contact.name)
+    .replace('{{surname}}', contact.surname)
+    .replace('{{phone}}', contact.phone);
+}
+  
+function getFormData() {
+  log('getFormData');
+  return {
+    name: nameInputEl.value,
+    surname: surnameInputEl.value,
+    phone: phoneInputEl.value
+  };
+}
+function resetForm() {
+  log('resetForm');
+  nameInputEl.value = '';
+  surnameInputEl.value = '';
+  phoneInputEl.value = '';  
+}
 
 
 
