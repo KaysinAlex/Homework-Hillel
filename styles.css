@@ -4,7 +4,9 @@
 }
 h1 {
   text-align: center;
-  box-shadow: 0 0 5 0 rgb(red, green, blue);
+  box-shadow: 0 0 5 0;
+  font-family: monospace;
+  background-color: aqua;
 }
 table {
   border-collapse: collapse;
@@ -17,42 +19,15 @@ th,
 td {
   text-align: left;
   padding: 8px;
+  font-family: cursive;
 }
 
 tr:nth-child(even) {
   background-color: #f2f2f2;
+  
 }
 
-h1 {
-  text-align: center;
-}
-.column {
-  float: left;
-  width: 25%;
-  padding: 10px;
-}
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-.firstName {
-  width: 30%;
-}
-.lastName {
-  width: 30%;
-}
-.phone {
-  width: 30%;
-}
 
-.btn {
-  width: 8%;
-}
-#del {
-  width: 30%;
-  margin: 0%;
-}
 
 
 
