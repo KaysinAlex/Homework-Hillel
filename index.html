@@ -10,28 +10,40 @@
 </head>
 <body>
 <h1>Список контактов</h1>
-<table id="myTable" style="border: 1px solid black">
+<table>
+    <thead>
+        <tr>
+            <th>Имя</th>
+            <th>Фамилия</th>
+            <th>номер телефона</th>
+            <th>Удалить</th>
+        </tr>
+    <tbody id="contactsList">
 
-    <tr>
-        <td>Имя</td>
-        <td>Фамилия</td>
-        <td>номер телефона</td>
-        <td>Удалить</td>
 
-    </tr>
-
+    </tbody>
+    <tfoot>
+        <tr>
+            <td> <input id="nameInput" /></td>
+            <td> <input id="surnameInput" /></td>
+            <td><input type="tel" id="phoneInput" /></td>
+            <td><button id="addContactBtn">Add</button></td>
+        </tr>
+    </tfoot>
+    </thead>
 
 </table>
 
-        <input type="text" id="firstName" class="firstName" placeholder='Имя'>
-        <input type="text" id="lastName" class="lastName" placeholder='Фамилия'>
-        <input type="tel" id="phone" class="phone" placeholder='Номер телефона' />
-        <button id="btn" type="submit" class="btn" onclick="insRow('myTable')"
-            value="Insert row">добавить</button>
+<script id="newContactTemplate" type="text/template">
+    <tr class="contact-item">
+        <td>{{name}}</td>
+        <td>{{surname}}</td>
+        <td>{{phone}}</td>
+        <td><button class="delete-btn"> delete</button></td>
+    </tr>
 
-<script id="delBtn" type="text/template">
-<button id= "del" type="submit" value="Delete" onclick="document.getElementById('myTable').deleteRow(0)">Удалить</button>
 </script>
+
 
 
 
