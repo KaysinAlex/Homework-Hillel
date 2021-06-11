@@ -29,8 +29,17 @@ function onAddBtnClick() {
 }
 function onBlockClick(e) { // функция  где на блоке нажали
   log('click', e.target); // чтоб видеть куда нажали
-}
+  if (e.target.classList.contains(BLOCK_LIST_ELEMENT)) {// Метод contains позволяет проверить, содержит ли один элемент внутри себя другой. Параметром метода передается элемент, который будет проверяться на то, что он находится внутри элемента, к которому применился метод
+    log('click block'); //  если нажать чтоб поменять цвет создадим ф-ию. смены класса
+    toggleBlockElem(e.target);//  передадим место клика для распознавания нужного
+    log('click target');
 
+    
+  }
+}
+function toggleBlockElem(el) {
+  el.classList.toggle('done') // Используем метод-переключатель classList.toggle и убедимся, что при нажатии на кнопку  у элемента будет то убираться, то добавляться класс.
+}
 function addTodo(text) {
   blockTodoList.push(text); // пушу в массив данные которые пришли аргументом
   log('push text');
