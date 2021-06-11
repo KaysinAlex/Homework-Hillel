@@ -1,6 +1,12 @@
 'use scrict';
 // Дз 12 Список контактов
-log = console.log;
+// Реализовать таблицу контактов.Таблица состоит из 4 - х колонок(Имя, Фамилия, номер, действия).
+// Внизу таблицы находяться инпуты для ввода соответствующих данных и кнопка добавить.
+// Также нужно реализовать валидацию, чтобы нельзя было добавить контакт с каким - то пустым полем
+// В каждой строке контакта есть кнопка удалить, которая удаляет запись.
+// Реализовать Вывод списка, добавление удаление.
+  
+/* log = console.log;
 const contactTemplate = document.getElementById('newContactTemplate').innerHTML;
 const contactsListEl = document.getElementById('contactsList');
 const nameInputEl = document.getElementById('nameInput');
@@ -78,7 +84,7 @@ function resetForm() {
   nameInputEl.value = '';
   surnameInputEl.value = '';
   phoneInputEl.value = '';  
-}
+} */
 
 
 
