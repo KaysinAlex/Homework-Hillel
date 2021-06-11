@@ -18,7 +18,7 @@ const newTodoInput = document.getElementById('block_form-input');
 let blockTodoList = []; // создаем массив в которій будем пушить  todo 
 
 document.getElementById('block_form-btn').addEventListener('click', onAddBtnClick);// обработчик на клик по кнопке
-blockListTodo.addEventListener('click', onBlockClick); // на клик по блоку задания
+//blockListTodo.addEventListener('click', onBlockClick); // на клик по блоку задания
 
 function onAddBtnClick() {
   if (isInputValid(newTodoInput.value)) {
@@ -27,9 +27,18 @@ function onAddBtnClick() {
     resetInput();
   }
 }
+
+function getBlockData() {   // возвращаем обьект с данными
+  log('getBlockData'); 
+  return {
+    id: Date.now(),
+    text: newTodoInput.value,
+  };
+}
 function isInputValid(str) { // валидация на пустой ввод через метод strim() который убирает все пробелы
-  returnstr.trim() !== '';
   log('trim');
+  return str.trim() !== '';
+  
 }
 function resetInput() {   // сброс инпута на пустую строку
   newTodoInput.value = '';
