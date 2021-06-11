@@ -10,9 +10,30 @@
 </head>
 <body>
 
+// homework 13 
+//Реализовать список todo
+<!-- на странице есть список, под списком форма с инпутом и кнопкой, с помощью них пользователь может
+добавлять новые дела в список.
+При клике на какое-то дело в списке, оно становится зеленым, при повторном клике возвращается в
+дефолтный цвет.
+Любое дело из списка можно удалить
+Обязательно делаем со слоем данных
+Дополнительное задание:
+Сохранять состояние в localstorage -->
 
+<div class="myTodo">
+    <h1>My to do list</h1>
+        <div id="block_form" class="block_form" type ="text">
+            <input type="text" id="block_form-input" class="block_form-input" placeholder="Введите задание" />
+            <button id="block_form-btn" class="block_form-btn" type="submit">добавить</button>
+        </div>
+    <ol id="block_list" class="block_list"></ol>
+    
+</div>
 
-
+<script type="text/template" id="block_template">
+<li class="block_list-element" data-block-todo-list-id= "{{id}}">{{text}} <span class="block_list-delete">X</span> </li>
+</script>
 
 
 
