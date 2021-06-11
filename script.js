@@ -32,8 +32,24 @@ function onAddBtnClick() {
 function addTodo(text) {
   blockTodoList.push(text); // пушу в массив данные которые пришли аргументом
   log('push text');
+  renderBlockListTodo(blockTodoList); // создать ф-цию для перебора массива
+}
+function renderBlockListTodo(block) {
+  blockListTodo.innerHTML = '';//устанавливает или получает HTML  разметку дочерних элементов ol где будут  li
+  block.forEach((item) => renderTodo(item));// выполняет указанную функцию один раз для каждого элемента в массиве, создадим такую функцию 
+  log('renderblocklisttodo');
 }
 
+function renderTodo(text) {
+  const newTodoHtml = getNewTodoTemplate(text); // создадим переменную для взятия введенного значения 
+  blockListTodo.insertAdjacentHTML('beforeend', newTodoHtml);//вставляем  введенный текст сразу перед закрывающим тегом element (после последнего потомка)
+  log('renderTodo');
+}
+function getNewTodoTemplate(text) { // вставляем введенный текст через replace  шаблона с инпута
+  return newTemplateTodo
+    .replace('{{text}}', text.text)
+    .replace('{{id}}', text.id);
+}
 function getBlockData() {   // возвращаем обьект с данными
   log('getBlockData'); 
   return {
