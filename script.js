@@ -28,6 +28,12 @@ function onAddBtnClick() {
   }
 }
 
+
+function addTodo(text) {
+  blockTodoList.push(text); // пушу в массив данные которые пришли аргументом
+  log('push text');
+}
+
 function getBlockData() {   // возвращаем обьект с данными
   log('getBlockData'); 
   return {
