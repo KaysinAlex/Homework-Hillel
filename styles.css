@@ -8,7 +8,7 @@ body {
 }
 .myTodo {
   width: auto;
-    box-shadow: 2px 0 5px 0 rgba(0, 4, 0, 0.4);
+  box-shadow: 2px 0 5px 0 rgba(0, 4, 0, 0.4);
   position: relative;
   border-top: solid 2x #e5f323;
   background-color: rgb(18, 235, 224);
@@ -24,7 +24,7 @@ h1 {
 .block_list {
   margin-bottom: 30px;
 }
-.block_list-elem {
+.block_list-element {
   background-color: rgb(10, 248, 208);
   font-family: cursive;
   border-bottom: 1px solid black;
@@ -34,7 +34,7 @@ h1 {
   position: relative;
   }
 
-.block_list-elem.done{
+.block_list-element.done{
   background-color: rgb(106, 252, 9);
   font-family: cursive;
   border-bottom: 1px solid black;
@@ -43,7 +43,7 @@ h1 {
   text-transform: capitalize;
   position: relative;
 }
-.block_list-elem:hover > .block_list-delete {
+.block_list-element:hover > .block_list-delete {
   transition: opacity 0.3s ease;
   opacity: 1;
 }
@@ -80,6 +80,8 @@ h1 {
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.4);
   text-indent: 10px;
 }
+
+
 
 .block_form-btn {
   display: block;

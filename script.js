@@ -18,7 +18,7 @@ const newTodoInput = document.getElementById('block_form-input');
 let blockTodoList = []; // создаем массив в которій будем пушить  todo 
 
 document.getElementById('block_form-btn').addEventListener('click', onAddBtnClick);// обработчик на клик по кнопке
-//blockListTodo.addEventListener('click', onBlockClick); // на клик по блоку задания
+blockListTodo.addEventListener('click', onBlockClick); // на клик по блоку задания
 
 function onAddBtnClick() {
   if (isInputValid(newTodoInput.value)) {
@@ -27,7 +27,9 @@ function onAddBtnClick() {
     resetInput();
   }
 }
-
+function onBlockClick(e) { // функция  где на блоке нажали
+  log('click', e.target); // чтоб видеть куда нажали
+}
 
 function addTodo(text) {
   blockTodoList.push(text); // пушу в массив данные которые пришли аргументом
