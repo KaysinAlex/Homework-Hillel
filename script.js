@@ -45,7 +45,7 @@ function renderTodo(text) {
   blockListTodo.insertAdjacentHTML('beforeend', newTodoHtml);//вставляем  введенный текст сразу перед закрывающим тегом element (после последнего потомка)
   log('renderTodo');
 }
-function getNewTodoTemplate(text) { // вставляем введенный текст через replace  шаблона с инпута
+function getNewTodoTemplate(text) { // вставляем введенный текст через replace  шаблона 
   return newTemplateTodo
     .replace('{{text}}', text.text)
     .replace('{{id}}', text.id);
