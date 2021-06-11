@@ -1,4 +1,99 @@
+// дз 13 
+* {
+  box-sizing: border-box;
+}
+body {
+ 
+  background-color: rgb(193, 246, 247);
+}
+.myTodo {
+  width: auto;
+    box-shadow: 2px 0 5px 0 rgba(0, 4, 0, 0.4);
+  position: relative;
+  border-top: solid 2x #e5f323;
+  background-color: rgb(18, 235, 224);
+}
+h1 {
+  font-family: cursive;
+  text-align: center;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.4);
+  width: 80%;
+  background-color: rgb(12, 245, 233);
+}
 
+.block_list {
+  margin-bottom: 30px;
+}
+.block_list-elem {
+  background-color: rgb(10, 248, 208);
+  font-family: cursive;
+  border-bottom: 1px solid black;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+  text-transform: capitalize;
+  position: relative;
+  }
+
+.block_list-elem.done{
+  background-color: rgb(106, 252, 9);
+  font-family: cursive;
+  border-bottom: 1px solid black;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+  text-transform: capitalize;
+  position: relative;
+}
+.block_list-elem:hover > .block_list-delete {
+  transition: opacity 0.3s ease;
+  opacity: 1;
+}
+.block_list-delete {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: red;
+  color: white;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  border-radius: 3px;
+  width: 15%;
+  line-height: 20px;
+  text-align: center;
+  display: block;
+  font-family: Arial, Helvetica, sans-serif;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.block_form:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.block_form-input {
+  float: left;
+  background-color: rgb(84, 250, 148);
+  display: block;
+  width: 80%;
+  height: 25px;
+  border-radius: 3px;
+  border: none;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.4);
+  text-indent: 10px;
+}
+
+.block_form-btn {
+  display: block;
+  float: right;
+  width: 15%;
+  line-height: 25px;
+  text-align: center;
+  border: none;
+  outline: none;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
+  background-color: blue;
+  border-radius: 3px;
+  color: white;
+}
 /* Дз 12 список контактов
 
 * {
