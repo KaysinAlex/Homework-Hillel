@@ -33,8 +33,11 @@ function onBlockClick(e) { // функция  где на блоке нажал�
     log('click block'); //  если нажать чтоб поменять цвет создадим ф-ию. смены класса
     toggleBlockElem(e.target);//  передадим место клика для распознавания нужного
     log('click target');
-
-    
+  }
+  if (e.target.classList.contains(DELETE_BLOCK_LIST_ELEMENT)) {// если нажали на крестик тогда выполним удаление по id 
+    const blockTodoListId = getTodoListId(e.target);
+    deleteBlockElem(blockTodoListId);
+    log('delete');    
   }
 }
 function toggleBlockElem(el) {
