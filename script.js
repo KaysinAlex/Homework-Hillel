@@ -6,6 +6,20 @@
 Обязательно делаем со слоем данных
 Дополнительное задание:
 Сохранять состояние в localstorage */
+log = console.log;
+
+const DELETE_BLOCK_LIST_ELEMENT = 'block_list-delete';
+const BLOCK_LIST_ELEMENT = 'block_list-element';
+
+const newTemplateTodo = document.getElementById('block_template').innerHTML; // доступ к скрипту в котором шаблон преобразуем в строку кода
+const blockListTodo = document.getElementById('block_list');
+const newTodoInput = document.getElementById('block_form-input');
+
+let blockTodoList = []; // создаем массив в которій будем пушить  todo 
+
+document.getElementById('block_form-btn').addEventListener('click', onAddBtnClick);// обработчик на клик по кнопке
+blockListTodo.addEventListener('click', onBlockClick); // на клик по блоку задания
+
 
 
 
