@@ -20,8 +20,21 @@ let blockTodoList = []; // создаем массив в которій буд�
 document.getElementById('block_form-btn').addEventListener('click', onAddBtnClick);// обработчик на клик по кнопке
 blockListTodo.addEventListener('click', onBlockClick); // на клик по блоку задания
 
-
-
+function onAddBtnClick() {
+  if (isInputValid(newTodoInput.value)) {
+    const newTodo = getBlockData();
+    addTodo(newTodo);
+    resetInput();
+  }
+}
+function isInputValid(str) { // валидация на пустой ввод через метод strim() который убирает все пробелы
+  returnstr.trim() !== '';
+  log('trim');
+}
+function resetInput() {   // сброс инпута на пустую строку
+  newTodoInput.value = '';
+  log('newTodoInput reset');
+}
 
 
 
