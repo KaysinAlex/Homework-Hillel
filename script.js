@@ -20,6 +20,8 @@ let blockTodoList = []; // создаем массив в которій буд�
 document.getElementById('block_form-btn').addEventListener('click', onAddBtnClick);// обработчик на клик по кнопке
 blockListTodo.addEventListener('click', onBlockClick); // на клик по блоку задания
 
+init();
+
 function onAddBtnClick() {
   if (isInputValid(newTodoInput.value)) {
     const newTodo = getBlockData();
@@ -40,6 +42,11 @@ function onBlockClick(e) { // функция  где на блоке нажал�
     log('delete');    
   }
 }
+function init() {
+  restoreFromStorage();
+  renderBlockListTodo(blockTodoList);
+}
+
 function getTodoListId(el) {
   const blockList = el.closest('.' + BLOCK_LIST_ELEMENT);// // возвращает ближайший родительский элемент (или сам элемент), который соответствует заданному CSS-селектору
   return +blockList.dataset.blockTodoListId;
@@ -52,12 +59,14 @@ function toggleBlockElem(el) {
 function deleteBlockElem(id) {
   log('id');
   blockTodoList = blockTodoList.filter((item) => item.id !== id);// отфильтруем по id 
+  saveToStorage();
   renderBlockListTodo(blockTodoList);// и прорендерим его
 }
 
 function addTodo(text) {
   blockTodoList.push(text); // пушу в массив данные которые пришли аргументом
   log('push text');
+  saveToStorage();
   renderBlockListTodo(blockTodoList); // создать ф-цию для перебора массива
 }
 
@@ -92,6 +101,20 @@ function resetInput() {   // сброс инпута на пустую стро�
   newTodoInput.value = '';
   log('newTodoInput reset');
 }
+
+function saveToStorage() {
+  localStorage.setItem('blockTodoList', JSON.stringify(blockTodoList));
+}
+
+function restoreFromStorage() {
+  const data = localStorage.getItem('blockTodoList');
+  if (data !== null) {
+    blockTodoList = JSON.parse(data);
+  } else {
+    blockTodoList = [];
+  }
+}
+
 
 
 
