@@ -3,20 +3,21 @@ log = console.log;
 // дз калькулятор
 function Calculator(item) {
   let result = item;
+  this.add = (num) => (this.result += num);
   this.sum = function (num) {
-    return result + num;
+    return result += num;
   };
 
   this.mult = function (num) {
-    return result*num;
+    return result*=num;
   };
 
   this.sub = function (num) {
-    return result-num;
+    return result-=num;
   };
 
   this.div = function (num) {
-    return result / num;
+    return result /= num;
   };
 }
 
