@@ -1,4 +1,34 @@
 'use scrict';
+log = console.log;
+// дз калькулятор
+function Calculator() {
+  this.sum = function (a, b) {
+    return a + b;
+  };
+
+  this.mult = function (a, b) {
+    return a * b;
+  };
+
+  this.sub = function (a, b) {
+    return a - b;
+  };
+
+  this.div = function (a, b) {
+    return a / b;
+  };
+}
+
+
+let calc = new Calculator(10);
+
+log(calc.sum(5));
+log(calc.mult(10));
+log(calc.sub(40));
+log(calc.div(10));
+
+
+
 // Дз 12 Реализовать список todo
 /* на странице есть список, под списком форма с инпутом и кнопкой, с помощью них пользователь может добавлять новые дела в список.
 При клике на какое - то дело в списке, оно становится зеленым, при повторном клике возвращается в дефолтный цвет.
@@ -6,9 +36,9 @@
 Обязательно делаем со слоем данных
 Дополнительное задание:
 Сохранять состояние в localstorage */
-log = console.log;
 
-const DELETE_BLOCK_LIST_ELEMENT = 'block_list-delete';
+
+/* const DELETE_BLOCK_LIST_ELEMENT = 'block_list-delete';
 const BLOCK_LIST_ELEMENT = 'block_list-element';
 
 const newTemplateTodo = document.getElementById('block_template').innerHTML; // доступ к скрипту в котором шаблон преобразуем в строку кода
@@ -114,7 +144,7 @@ function restoreFromStorage() {
     blockTodoList = [];
   }
 }
-
+ */
 
 
 
