@@ -1,21 +1,22 @@
 'use scrict';
 log = console.log;
 // дз калькулятор
-function Calculator() {
-  this.sum = function (a, b) {
-    return a + b;
+function Calculator(item) {
+  let result = item;
+  this.sum = function (num) {
+    return result + num;
   };
 
-  this.mult = function (a, b) {
-    return a * b;
+  this.mult = function (num) {
+    return result*num;
   };
 
-  this.sub = function (a, b) {
-    return a - b;
+  this.sub = function (num) {
+    return result-num;
   };
 
-  this.div = function (a, b) {
-    return a / b;
+  this.div = function (num) {
+    return result / num;
   };
 }
 
