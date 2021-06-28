@@ -1,7 +1,7 @@
 'use scrict';
 log = console.log;
 // дз калькулятор
-function Calculator(item) {
+/* function Calculator(item) {
   let result = item;
   this.add = (num) => (this.result += num);
   this.sum = function (num) {
@@ -28,7 +28,7 @@ log(calc.sum(5));
 log(calc.mult(10));
 log(calc.sub(40));
 log(calc.div(10));
-
+ */
 
 
 // Дз 12 Реализовать список todo
