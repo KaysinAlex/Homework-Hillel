@@ -1,5 +1,107 @@
 'use scrict';
 log = console.log;
+/*  Написать цепочку наследования классов, минимум из трёх уровней, постепенно расширяя список свойств и, возможно, методов. Взять любой пример из реальной жизни. Применить любой из понятных синтаксисов.
+
+Например:
+
+Геометрия: точка -> линия -> фигура из линий
+
+Авто: базовая комплектация -> продвинутая -> полный фарш */
+
+
+
+class Animal {
+  constructor(name) {
+    this.speed = 0;
+    this.name = name;
+  }
+  run(speed) {
+    this.speed = speed;
+    log(`${this.name}  мчится  co скоростью ${this.speed}.`);
+  }
+  stop() {
+    this.speed = 0;
+   
+    log(`${this.name} стоит!`);
+    
+   }
+
+}
+class Rabbit extends Animal {
+  constructor(name, earLenght,) {
+    super(name); // определяет свойства родителя
+    this.earLenght = earLenght;
+  }
+  hide() {  // строка внутри конструктора определяет новый метод  hide  которого не будет у  Animal
+    
+    log(`${this.name} прячется в норке!!! `);
+  }
+}
+let rabbit = new Rabbit('Белый кролик', 'Длинна ушей 10cm.');
+
+class Bird extends Animal { // наследуем  свойства Animal , делаем bird  child Animal
+  constructor(name,hide) {
+    super(name,hide);
+      this.hide = hide;  
+    }  
+  flight(flies) {
+    this.flies = flies;
+    log(`${this.name} летит со скоростью ${this.flies} км/час .`);
+  }
+  walk(walks) {
+    this.walks = walks;
+    log(`${this.name} идет co скоростью ${this.walks} км/час.` )
+  }
+      huntered(hunter){
+      this.hunter = hunter;
+      log(`Увидев жертву ${this.name} кидается камнем в низ со скоростью ${this.flies} км/час`);
+    }
+}
+
+
+let eagle = new Bird('Орел', 'прячется высоко в небе перед тем как напасть');
+
+class Dolphin extends Animal {
+  constructor(name, swim) {
+    super(name, swim);
+    this.swim = swim;
+  }
+  eat(fish) {
+    this.fish = fish;
+    log(`${this.name} питается рыбой   `)
+    
+  }
+}
+
+let dolphin = new Dolphin('Дельфин', 'Плывет')
+
+
+
+
+log(rabbit.name);
+log(rabbit.earLenght);
+rabbit.stop();
+rabbit.run(20);
+rabbit.hide();
+
+log(eagle.name);
+log(eagle.hide);
+eagle.flight(90);
+eagle.walk(0.5);
+eagle.run(2);
+eagle.huntered();
+eagle.stop();
+
+log(dolphin.name);
+log(dolphin.swim);
+dolphin.eat();
+dolphin.run(50)
+dolphin.stop();
+
+
+
+
+
 // дз калькулятор
 /* function Calculator(item) {
   let result = item;
