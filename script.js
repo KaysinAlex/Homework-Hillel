@@ -23,8 +23,8 @@
  */
  class Hamburger {
   constructor(size) {
-    this.price = size.price;
-    this.callories = size.callories;
+    this.size = size;
+    this.toppings = [];
   }
     static SIZE_SMALL = { price: 50, callories: 20 }
     static SIZE_MEDIUM = { price: 75, callories: 30 }
@@ -37,14 +37,17 @@
   static TOPPONG_MAYO = { price: 20, callories: 5 }
   
   getPrice() {
-    return this.price;
+    return this.toppings.reduce((acc, t) => acc + t.price, this.size.price);
+    //return this.price;
   }
   getCallories() {
-    return this.callories;
+    return this.toppings.reduce((acc, t) => acc + t.callories, this.size.callories);
+    //return this.callories;
   }
-  addTopping(topping) {
-    this.price += topping.price;
-    this.callories += topping.callories;
+   addTopping(topping) {
+     this.toppings.push(topping);
+    //this.price += topping.price;
+    //this.callories += topping.callories;
   }
 }
 
