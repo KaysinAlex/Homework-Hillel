@@ -1,5 +1,5 @@
 'use scrict';
-log = console.log;
+//log = console.log;
 
 // дз 16 Гамбургер
 /* 
@@ -31,7 +31,7 @@ class Hamburger {
     static SIZE_BIG = { price:100, callories:40 }
 
   static TOPPING_CHEESE = { price: 10, callories: 20 }
-  static TOPPING_SALAD = { price20, callories: 5 }
+  static TOPPING_SALAD = { price:20, callories: 5 }
   static TOPPING_POTATO = { price: 15, callories: 10 }
   static TOPPING_SPICE = { price: 15, callories: 0 }
   static TOPPONG_MAYO = { price: 20, callories: 5 }
@@ -53,8 +53,8 @@ const hamburger = new Hamburger(Hamburger.SIZE_SMALL);
 hamburger.addTopping(Hamburger.TOPPONG_MAYO);
 hamburger.addTopping(Hamburger.TOPPING_POTATO);
 
-log("Price with sauce: " + hamburger.getPrice());
-log("Callories with sauce: " + hamburger.getCallories());
+console.log("Price with sauce: " + hamburger.getPrice());
+console.log("Callories with sauce: " + hamburger.getCallories());
 
 
 
