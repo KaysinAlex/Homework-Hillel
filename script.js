@@ -1,6 +1,60 @@
 'use scrict';
 log = console.log;
 
+// дз 16 Гамбургер
+/* 
+Сеть фастфудов предлагает несколько видов гамбургеров:
+
+маленький (50 тугриков, 20 калорий)
+средний (75 тугриковб 30 каллорий)
+большой (100 тугриков, 40 калорий)
+
+Гамбургер может быть с одним из нескольких видов начинок:
+
+сыром (+ 10 тугриков, + 20 калорий)
+салатом (+ 20 тугриков, + 5 калорий)
+картофелем (+ 15 тугриков, + 10 калорий)
+посыпать приправой (+ 15 тугриков, 0 калорий)
+полить майонезом (+ 20 тугриков, + 5 калорий).
+
+При этом начинок можно добавить несколько или не быть совсем
+
+Напишите программу, расчитывающую стоимость и калорийность гамбургера. Используй ООП подход (подсказка: нужен класс Гамбургер, статические константы, методы для выбора опций и рассчета нужных величин).
+ */
+class Hamburger {
+  constructor(size) {
+    this.price = size.price;
+    this.callories = size.callories;
+  }
+    static SIZE_SMALL = { price: 50, callories: 20 }
+    static SIZE_MEDIUM = { price: 75, callories: 30 }
+    static SIZE_BIG = { price:100, callories:40 }
+
+  static TOPPING_CHEESE = { price: 10, callories: 20 }
+  static TOPPING_SALAD = { price20, callories: 5 }
+  static TOPPING_POTATO = { price: 15, callories: 10 }
+  static TOPPING_SPICE = { price: 15, callories: 0 }
+  static TOPPONG_MAYO = { price: 20, callories: 5 }
+  
+  getPrice() {
+    return this.price;
+  }
+  getCallories() {
+    return this.callories;
+  }
+  addTopping(topping) {
+    this.price += topping.price;
+    this.callories += topping.callories;
+  }
+}
+
+const hamburger = new Hamburger(Hamburger.SIZE_SMALL);
+// добавка из майонеза
+hamburger.addTopping(Hamburger.TOPPONG_MAYO);
+hamburger.addTopping(Hamburger.TOPPING_POTATO);
+
+log("Price with sauce: " + hamburger.getPrice());
+log("Callories with sauce: " + hamburger.getCallories());
 
 
 
