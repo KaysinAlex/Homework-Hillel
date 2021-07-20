@@ -21,7 +21,7 @@
 
 Напишите программу, расчитывающую стоимость и калорийность гамбургера. Используй ООП подход (подсказка: нужен класс Гамбургер, статические константы, методы для выбора опций и рассчета нужных величин).
  */
-class Hamburger {
+/* class Hamburger {
   constructor(size) {
     this.price = size.price;
     this.callories = size.callories;
@@ -55,7 +55,7 @@ hamburger.addTopping(Hamburger.TOPPING_POTATO);
 
 console.log("Price with sauce: " + hamburger.getPrice());
 console.log("Callories with sauce: " + hamburger.getCallories());
-
+ */
 
 
 
