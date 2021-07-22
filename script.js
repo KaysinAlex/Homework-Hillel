@@ -23,8 +23,10 @@
  */
  class Hamburger {
   constructor(size) {
+    //this.price = size.price;
+    //this.callories = size.callories;
     this.size = size;
-    this.toppings = [];
+    this.toppings = [];// так удобнее чтоб не засорять стакан?
   }
     static SIZE_SMALL = { price: 50, callories: 20 }
     static SIZE_MEDIUM = { price: 75, callories: 30 }
