@@ -1,0 +1,24 @@
+body {
+    box-sizing: border-box;
+    height: 100vh;
+    width: 100vw;
+    cursor: pointer;
+}
+
+
+#photos {
+    display: flex;
+   flex-wrap: wrap;
+   list-style: none;
+   margin-right: 8px;
+}
+
+#pagination {
+    display: flex;
+    list-style-type: none;
+    flex-wrap: wrap;
+    }
+
+    .page {
+        margin-right: 30px;
+    }
