@@ -14,6 +14,6 @@
 .task-item.done {
     background-color: lightgreen;
 }
-.delete-btn {
+.delete-todo-btn {
     float: right;
 }
