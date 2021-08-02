@@ -1,8 +1,11 @@
 const add = require('./add');
 const sub = require('./sub');
+const mult = require('./mult');
 
 
 module.exports = {
     add: add,
-    sub:sub,
+    sub: sub,
+    mult: mult,
+    
 }
