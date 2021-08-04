@@ -8,7 +8,7 @@ class TodoFormView{
     }
 
     initView() {
-        console.log('initViev');
+        console.log('initView');
         return $(`<form id="addTodoForm">
                     <div class="row">
                         <div class="input column">
