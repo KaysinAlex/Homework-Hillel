@@ -1,24 +1,17 @@
-const {parallel} = require('gulp');
+const {parallel, src, dest } = require('gulp');
 
 
-function hello(cb) {
-    console.log('Hello world');
-    cb();
+
+function copyJs() {
+   return src('./src/js/**/*.js').pipe(dest('./dist/js'));
 }
-function copyJs(cb) {
-    setTimeout(() => {
-        console.log('copy js');
-        cb();
-    }, 2000);
+function copyCss() {
+   return src('./src/css/**/*.css').pipe(dest('./dist/css'));
 }
-function copyCss(cb) {
-    setTimeout(() => {
-        console.log('copy Css');
-        cb();
-    }, 1000);
+function copyHttml() {
+   return src('./src/index.html').pipe(dest('./dist'));
 }
 
 module.exports = {
-    hello,
-    build: parallel(copyJs, copyCss),
+    build: parallel(copyHttml, copyJs, copyCss),
 };
