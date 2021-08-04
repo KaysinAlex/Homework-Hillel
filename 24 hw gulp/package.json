@@ -6,11 +6,14 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node ./",
-    "buikd" : "node ./"
+    "buikd": "node ./"
   },
   "author": "Alex Kaysin",
   "license": "MIT",
   "devDependencies": {
     "lodash": "^4.17.21"
+  },
+  "dependencies": {
+    "gulp": "^4.0.2"
   }
 }
