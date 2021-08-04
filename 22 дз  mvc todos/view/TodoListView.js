@@ -3,7 +3,7 @@ const ADD_TODO_BTN_SELECTOR = '.addTodoBtn';
 const ITEM_SELECTOR = '.task-item';
 const TASK_DONE_CLASS = 'done';
 
-const taskListTemplate = $('.task-list');
+const taskListElement = $('.task-list');
 const taskItemTemplate = $('#taskItemTemplate').html();
 
 class TodosView {
@@ -17,7 +17,7 @@ class TodosView {
     }
     initView() {
         console.log('initView');
-        this._$list = $(taskListTemplate);
+        this._$list = $(taskListElement);
         this._$list.on('click', DELETE_TODO_BTN_SELECTOR, this.onListClick.bind(this));
         this._container.on('click', ADD_TODO_BTN_SELECTOR, this.onAddTodoClick.bind(this));
         this._$list.on('click', ITEM_SELECTOR, this.onToggleTaskStateClick.bind(this));
