@@ -1,5 +1,6 @@
-function hello() {
+function hello(cb) {
     console.log('Hello world');
+    cb();
 }
 
 
