@@ -25,16 +25,3 @@ module.exports = {
 
 
 
-/* 
-function copyJs() {
-    return src([
-        './js/Controller/TodosController.js/*.js',
-        './js/config.js/*.js',
-        './js/app.js/*.js',
-        './js/module/TodoCollection.js/*.js',
-        './js/view/TodoFormView.js/*.js',
-        './js/view/TodoListView.js/*.js'
-    ])
-    .pipe(concat('app.js'))
-    .pipe(dest('./dist/js'));
-} */
