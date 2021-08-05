@@ -1,16 +1,16 @@
 const { parallel, src, dest } = require('gulp');
-const concat = require('gulp-concat');
-const uglify = require('gulp-uglify');
-const cssNano = require('gulp-cssnano');
+const concat = require('gulp-concat'); // Объединение файлов - конкатенация
+const uglify = require('gulp-uglify'); //Минимизация javascript
+const cssNano = require('gulp-cssnano'); // Минимизация CSS
 
 function copyJs() {
     return src('./src/js/**/*.js')
-        .pipe(concat('app.js'))
-        .pipe(dest('./dist/js'));
+        .pipe(concat('index.js'))
+        .pipe(dest('./dist'));
 }
 function copyCss() {
     return src('./src/css/**/*.css')
-        .pipe(dest('./dist/css'));
+        .pipe(dest('./dist'));
 }
 /* function copyJqueryCss() {
     return src('./src/jquery/jquery-1.8.3.js')
@@ -23,15 +23,15 @@ function copyHttml() {
 
 function copyMiniUglifyJs() {
     return src('./src/js/**/*.js')
-        .pipe(concat('app.js'))
+        .pipe(concat('index.js'))
         .pipe(uglify())
-        .pipe(dest('./dist/js'));
+        .pipe(dest('./dist'));
 }
 function copyMiniCssNano() {
     return src('./src/css/**/*.css')
-        .pipe(concat('styles.css'))
+        .pipe(concat('app.css'))
         .pipe(cssNano())
-        .pipe(dest('./dist/css'));
+        .pipe(dest('./dist'));
 }
 
 
