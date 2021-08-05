@@ -20,7 +20,7 @@ function copyHttml() {
 
 function copyMiniUglifyJs() {
     return src('./src/js/**/*.js')
-        .pipe(concat('index.js'))
+        .pipe(concat('app.js'))
         .pipe(uglify())
         .pipe(dest('./dist/js'));
 }
