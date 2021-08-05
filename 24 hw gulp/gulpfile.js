@@ -12,7 +12,7 @@ function copyCss() {
     return src('./src/css/**/*.css')
         .pipe(dest('./dist'));
 }
-/* function copyJqueryCss() {
+/* function copyJqueryJs() {
     return src('./src/jquery/jquery-1.8.3.js')
         .pipe(dest('./dist/js/jquery'));
 } */
