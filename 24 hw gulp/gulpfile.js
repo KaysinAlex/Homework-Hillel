@@ -1,5 +1,7 @@
 const { parallel, src, dest } = require('gulp');
 const concat = require('gulp-concat');
+const uglify = require('gulp-uglify');
+const cssNano = require('gulp-cssnano');
 
 function copyJs(cb) {
     return src('./src/js/**/*.js')
@@ -19,8 +21,23 @@ function copyHttml() {
         .pipe(dest('./dist'));
 }
 
+function copyMiniUglifyJs() {
+    return src('./src/js/**/*.js')
+        .pipe(concat('app.js'))
+        .pipe(uglify('app.js'))
+        .pipe(dest('./dist/js'));
+}
+function copyMiniCssNano() {
+    return src('./src/css/**/*.css')
+        .pipe(concat('styles.css'))
+        .pipe(cssNano())
+        .pipe(dest('./dist/css'));
+}
+
+
 module.exports = {
     build: parallel(copyHttml, copyJs, copyCss),
+    uglify: parallel(copyMiniUglifyJs, copyMiniCssNano, copyHttml)
 };
 
 
