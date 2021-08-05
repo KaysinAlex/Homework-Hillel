@@ -4,17 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./",
-    "buikd": "node ./"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Alex Kaysin",
-  "license": "MIT",
-  "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-concat": "^2.6.1",
-    "gulp-cssnano": "^2.1.3",
-    "gulp-uglify": "^3.0.2",
-    "lodash": "^4.17.21"
-  }
+  "license": "MIT"
 }
