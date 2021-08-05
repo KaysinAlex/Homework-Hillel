@@ -14,5 +14,8 @@
     "gulp": "^4.0.2",
     "gulp-concat": "^2.6.1",
     "lodash": "^4.17.21"
+  },
+  "dependencies": {
+    "gulp-cssnano": "^2.1.3"
   }
 }
