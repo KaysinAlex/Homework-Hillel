@@ -1,6 +1,6 @@
 log = console.log;
  
-class TodoController{
+class TodoController {
     constructor(){
         this.listview = new TodoListView({
             onToggle: this.onToggle.bind(this),
