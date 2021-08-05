@@ -5,7 +5,7 @@ const concat = require('gulp-concat'); // Объединение файлов - 
 
 function copyJs() {
     return src('./src/js/**/*.js')
-        .pipe(concat('app.js'))
+        .pipe(concat('app.js')) //можно связать несколько задач вместе с помощью метода pipe() 
         .pipe(dest('./dist/js'));
 }
 function copyCss() {
