@@ -22,19 +22,19 @@ function copyMiniUglifyJs() {
     return src('./src/js/**/*.js')
         .pipe(concat('index.js'))
         .pipe(uglify())
-        .pipe(dest('./dist'));
+        .pipe(dest('./dist/js'));
 }
 function copyMiniCssNano() {
     return src('./src/css/**/*.css')
         .pipe(concat('app.css'))
         .pipe(cssNano())
-        .pipe(dest('./dist'));
+        .pipe(dest('./dist/css'));
 }
 
 
 module.exports = {
     build: parallel(copyHttml, copyJs, copyCss),
-     uglify: parallel(copyMiniUglifyJs, copyMiniCssNano, copyHttml)
+    uglify: parallel(copyMiniUglifyJs, copyMiniCssNano, copyHttml)
 };
 
 
