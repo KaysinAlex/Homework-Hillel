@@ -3,12 +3,12 @@ const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
 const cssNano = require('gulp-cssnano');
 
-function copyJs(cb) {
+function copyJs() {
     return src('./src/js/**/*.js')
         .pipe(concat('app.js'))
         .pipe(dest('./dist/js'));
 }
-function copyCss(cb) {
+function copyCss() {
     return src('./src/css/**/*.css')
         .pipe(dest('./dist/css'));
 }
