@@ -3,15 +3,15 @@ const concat = require('gulp-concat'); // Объединение файлов - 
 const uglify = require('gulp-uglify'); //Минимизация javascript
 const cssNano = require('gulp-cssnano'); // Минимизация CSS
 
-// function copyJs() {
-//     return src('./src/js/**/*.js')
-//         .pipe(concat('app.js')) //можно связать несколько задач вместе с помощью метода pipe() 
-//         .pipe(dest('./dist/js'));
-// }
-// function copyCss() {
-//     return src('./src/css/**/*.css')
-//         .pipe(dest('./dist/css'));
-// }
+function copyJs() {
+    return src('./src/js/**/*.js')
+        .pipe(concat('app.js')) //можно связать несколько задач вместе с помощью метода pipe() 
+        .pipe(dest('./dist/js'));
+}
+function copyCss() {
+    return src('./src/css/**/*.css')
+        .pipe(dest('./dist/css'));
+}
 
 function copyHttml() {
     return src('./src/index.html')
@@ -32,7 +32,8 @@ function copyMiniCssNano() {
 
 
 module.exports = {
-    build:  parallel(copyMiniUglifyJs, copyMiniCssNano, copyHttml)
+    minify: parallel(copyMiniUglifyJs, copyMiniCssNano, copyHttml),
+    build: parallel(copyCss, copyHttml, copyJs)
 };
 
 
