@@ -24,7 +24,7 @@ function copyHttml() {
 function copyMiniUglifyJs() {
     return src('./src/js/**/*.js')
         .pipe(concat('app.js'))
-        .pipe(uglify('app.js'))
+        .pipe(uglify())
         .pipe(dest('./dist/js'));
 }
 function copyMiniCssNano() {
