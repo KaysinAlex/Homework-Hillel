@@ -1,7 +1,7 @@
 const { parallel, src, dest } = require('gulp');
 const concat = require('gulp-concat'); // Объединение файлов - конкатенация
-// const uglify = require('gulp-uglify'); //Минимизация javascript
-// const cssNano = require('gulp-cssnano'); // Минимизация CSS
+const uglify = require('gulp-uglify'); //Минимизация javascript
+const cssNano = require('gulp-cssnano'); // Минимизация CSS
 
 function copyJs() {
     return src('./src/js/**/*.js')
@@ -18,23 +18,24 @@ function copyHttml() {
         .pipe(dest('./dist'));
 }
 
-// function copyMiniUglifyJs() {
-//     return src('./src/js/**/*.js')
-//         .pipe(concat('index.js'))
-//         .pipe(uglify())
-//         .pipe(dest('./dist'));
-// }
-// function copyMiniCssNano() {
-//     return src('./src/css/**/*.css')
-//         .pipe(concat('app.css'))
-//         .pipe(cssNano())
-//         .pipe(dest('./dist'));
-// }
+function copyMiniUglifyJs() {
+    return src('./src/js/**/*.js')
+        .pipe(concat('index.js'))
+        .pipe(uglify())
+        .pipe(dest('./dist'));
+}
+function copyMiniCssNano() {
+    return src('./src/css/**/*.css')
+        .pipe(concat('app.css'))
+        .pipe(cssNano())
+        .pipe(dest('./dist'));
+}
 
 
 module.exports = {
     build: parallel(copyHttml, copyJs, copyCss),
+     uglify: parallel(copyMiniUglifyJs, copyMiniCssNano, copyHttml)
 };
 
-// uglify: parallel(copyMiniUglifyJs, copyMiniCssNano, copyHttml)
+
 
