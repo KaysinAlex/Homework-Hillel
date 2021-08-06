@@ -6,9 +6,11 @@ export class TodosView{
     }
     initView() {
         console.log('initView');
-
-
+        return $(`<div id="todoList" class = "todo-list addTodoInput"></div>`)
+            .on('click', '.todo-item', (e) => this.onItemClick(e))
+        .on('click', 'delete=btn', (e)=> this.onDeleteClick(e))    
     }
+    
     render(list) {
         console.log(list);
     }
