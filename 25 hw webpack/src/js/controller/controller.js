@@ -24,10 +24,18 @@ export class TodoController {
     }
     onToggle(id) {
         console.log(this.onToggle);
-        this.collection.onToggle(id);
+        this.collection.toggle(id);
         this.renderListTodo();
     }
-    
+    onSave(todo) {
+        console.log('onsave work');
+        this.collection.add(todo).then(() => this.renderListTodo());
+    }
+    onDelete(id) {
+        console.log('onDelete work?');
+        this.collection.onDelete(id);
+        this.renderListTodo();
+    }
     
     renderListTodo() {
         console.log('renderListTodo');
