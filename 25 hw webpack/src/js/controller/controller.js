@@ -1,6 +1,6 @@
-import { TodosView } from './view/todosView.js';
-import { FormTodoView } from './view/todosFormView.js';
-import { TodoCollection } from './module/module.js';
+import { TodosView } from './view/todosView';
+import { FormTodoView } from './view/todosFormView';
+import { TodoCollection } from './module/module';
 
 export class TodoController {
     constructor() {

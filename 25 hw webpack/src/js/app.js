@@ -1,4 +1,4 @@
-import { TodoController } from './controller/controller.js';
+import { TodoController } from './controller/controller';
 
 $(() => {
     new TodoController($('.container'));
