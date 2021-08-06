@@ -1,7 +1,4 @@
-
-
-
-class TodoController {
+export class TodoController {
     constructor() {
         this.todosView = new TodosView({
             onToggle: this.onToggle.bind(this),
@@ -11,7 +8,7 @@ class TodoController {
             onSave: (todo)=>this.onSave(todo)
         })
 
-
+console.log('work export?')
 
 
 
