@@ -1,6 +1,6 @@
 import { TODOS_URL } from '../config.js'; // если я пишу не TODOS_URL а другое имя то пишет: свойство обьявлено но не прочитано! узнать почему?
 
-export class TodoCollection {
+export default class TodoCollection {
     constructor() {
         console.log('collection created');
 
@@ -29,11 +29,23 @@ export class TodoCollection {
 
     delete(id){
         console.log(id);
+        this.list = this.list.filter((item) => item.id != id);
+        return fetch(`${TODOS_URL}/${id}`, {
+            method: 'DELETE'
+        });
     }
 
     add(newTodo) {
         newTodo.isDone = false;
         console.log(newTodo);
-        
+        return fetch(`${TODOS_URL}`, {
+            method: 'POST',
+            body: JSON.stringify(newTodo),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(resp => resp.json())
+        .then(todo => this.list.push(todo));
     }
 }

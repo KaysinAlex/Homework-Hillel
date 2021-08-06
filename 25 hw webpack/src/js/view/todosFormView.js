@@ -1,4 +1,4 @@
-export class FormTodoView{
+export default class FormTodoView{
     constructor(config) {
         this.config = config;
         this.$el = this.initView();

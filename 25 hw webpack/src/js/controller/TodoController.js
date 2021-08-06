@@ -2,7 +2,7 @@ import { TodosView } from './view/TodosView';
 import { FormTodoView } from './view/TodosFormView';
 import { TodoCollection } from './module/TodoCollection';
 
-export class TodoController {
+export default class TodoController {
     constructor() {
         console.log('work export?');
         this.todosView = new TodosView({
