@@ -1,4 +1,4 @@
-import { TODOS_URL } from '../config';
+import { TODOS_URL } from '../config'; // если я пишу не TODOS_URL а другое имя то пишет: свойство обьявлено но не прочитано! узнать почему?
 
 export class TodoCollection {
     constructor() {
