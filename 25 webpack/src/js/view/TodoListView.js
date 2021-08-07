@@ -1,4 +1,4 @@
-import '../../css/style.css';
+import '../../css/styles.css';
 
 export default class TodoListView{
     constructor(config){
