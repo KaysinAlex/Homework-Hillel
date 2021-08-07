@@ -1,3 +1,4 @@
+
 log = console.log;
  
 class TodoController {
