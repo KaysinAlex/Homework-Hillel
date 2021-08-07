@@ -1,6 +1,3 @@
-
-log = console.log;
- 
 class TodoController {
     constructor(){
         this.listview = new TodoListView({
@@ -24,24 +21,24 @@ class TodoController {
     }
 
     onToggle(id) {   //Используем метод-переключатель classList.toggle и убедимся, что при нажатии на кнопку «Изменить тему» у элемента будет то убираться, то добавляться класс
-        log('onToggle');
+        console.log('onToggle');
         this.collection.toggle(id);
         this.renderList();
     }
 
     onDelete(id) {
-        log('onDelete');
+        console.log('onDelete');
         this.collection.delete(id);
         this.renderList();
     }
 
     onSave(todo) {
-        log('onSave');
+        console.log('onSave');
         this.collection.add(todo).then(() => this.renderList());
     }
 
     renderList() {
-        log('render list');
+        console.log('render list');
         this.listview.render(this.collection.list);
     }
 } 

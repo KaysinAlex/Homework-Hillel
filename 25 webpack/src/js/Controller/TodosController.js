@@ -1,4 +1,3 @@
-
 import TodoFormView from '../view/TodoFormView';
 import TodoListView from '../view/TodoListView';
 import TodoCollection from '../module/TodoCollection';

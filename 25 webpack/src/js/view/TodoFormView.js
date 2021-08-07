@@ -24,7 +24,7 @@ export default class TodoFormView{
     }
 
     onFormRefer(e) {
-        log('onFormRefer');
+        console.log('onFormRefer');
         e.preventDefault(); //при вызове этого метода действие по умолчанию для события не запускается.
 
         const todo = {
@@ -37,7 +37,7 @@ export default class TodoFormView{
     }
 
     clear() {
-        log('clear input');
+        console.log('clear input');
         this.$todoInput.val('') // val('') установка значений input  в пустую строку после ввода todo 
     }
 }
