@@ -5,9 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>27 hw Chat</title>
-    <script src="./script.js"></script>
+    <link rel="stylesheet" href="./src/css/style.css">
+    <script src="./src/js/script.js" defer></script>
+    <script src="./src/js/chatscript.js" defer></script>
 </head>
 <body>
-    
+    <div id="user">
+        <label for="name"> Write your name</label>
+        <input type="text" name="name" id = "autor" placeholder="Autor"/>
+    </div>
+    <form name="message" action="">
+        <input id ="message" type="text" name="message" placeholder="add message">
+        <input id ="btn" type="submit" value="Send">
+    </form>
+
+    <div id="subscribe"></div>
 </body>
 </html>
