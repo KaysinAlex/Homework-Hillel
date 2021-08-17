@@ -26,7 +26,7 @@ eval("var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!\n * jQ
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ AlbumsController)\n/* harmony export */ });\n/* harmony import */ var _view_AlbumsView__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../view/AlbumsView */ \"./src/js/view/AlbumsView.js\");\n\r\n\r\n\r\nclass AlbumsController {\r\n    constructor($container) {\r\n        console.log('Init Albums Controller');\r\n        this.$container = $container;\r\n\r\n        this.albumsView = new _view_AlbumsView__WEBPACK_IMPORTED_MODULE_0__.default({\r\n            onAlbumsSelect: (id) => this.getAlbumPhotos(id)\r\n        });\r\n\r\n    }\r\n    getAlbumPhotos(albumId) {\r\n        console.log('albumId');\r\n    }\r\n    \r\n}\n\n//# sourceURL=webpack://26-gallery-mvc/./src/js/Controller/AlbumsController.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ AlbumsController)\n/* harmony export */ });\n/* harmony import */ var _view_PhotosView__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../view/PhotosView */ \"./src/js/view/PhotosView.js\");\n/* harmony import */ var _view_AlbumsView__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../view/AlbumsView */ \"./src/js/view/AlbumsView.js\");\n\r\n\r\n\r\n\r\nclass AlbumsController {\r\n    constructor($container) {\r\n        console.log('Init Albums Controller');\r\n        this.$container = $container;\r\n\r\n        this.albumsView = new _view_AlbumsView__WEBPACK_IMPORTED_MODULE_1__.default({\r\n            onAlbumsSelect: (id) => this.getAlbumPhotos(id)\r\n        });\r\n\r\n        this.photosView = new _view_PhotosView__WEBPACK_IMPORTED_MODULE_0__.default({});\r\n\r\n    }\r\n    getAlbumPhotos(albumId) {\r\n        console.log(albumId);\r\n    }\r\n    \r\n}\n\n//# sourceURL=webpack://26-gallery-mvc/./src/js/Controller/AlbumsController.js?");
 
 /***/ }),
 
@@ -49,6 +49,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var jque
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ AlbumsView)\n/* harmony export */ });\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ \"./node_modules/jquery/dist/jquery.js\");\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);\n\r\n\r\nclass AlbumsView {\r\n    constructor(config) {\r\n        this.config = config;\r\n        this.$el = this.initView();\r\n\r\n       \r\n    }\r\n    initView() {\r\n        console.log('Init Albums View');\r\n         return jquery__WEBPACK_IMPORTED_MODULE_0___default()('<div id = \"albums\" class = \"albums three columns\"></div>')\r\n            .on('click', '.album-item', (e) => this.config.onAlbumsSelect(jquery__WEBPACK_IMPORTED_MODULE_0___default()(e.target).data('id')));\r\n    }\r\n}\n\n//# sourceURL=webpack://26-gallery-mvc/./src/js/view/AlbumsView.js?");
+
+/***/ }),
+
+/***/ "./src/js/view/PhotosView.js":
+/*!***********************************!*\
+  !*** ./src/js/view/PhotosView.js ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ PhotosView)\n/* harmony export */ });\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ \"./node_modules/jquery/dist/jquery.js\");\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);\n\r\nclass PhotosView {\r\n    constructor() {\r\n        this.$el = this.initView();\r\n        console.log('initPhotosView ');\r\n    }\r\n}\n\n//# sourceURL=webpack://26-gallery-mvc/./src/js/view/PhotosView.js?");
 
 /***/ })
 

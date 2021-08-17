@@ -1,3 +1,4 @@
+import PhotosView from "../view/PhotosView";
 import AlbumsView from "../view/AlbumsView";
 
 
@@ -9,6 +10,8 @@ export default class AlbumsController {
         this.albumsView = new AlbumsView({
             onAlbumsSelect: (id) => this.getAlbumPhotos(id)
         });
+
+        this.photosView = new PhotosView({});
 
     }
     getAlbumPhotos(albumId) {
