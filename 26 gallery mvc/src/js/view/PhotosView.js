@@ -1,4 +1,5 @@
 import $ from 'jquery';
+
 export default class PhotosView {
     constructor() {
         this.$el = this.initView();
