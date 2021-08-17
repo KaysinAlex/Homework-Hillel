@@ -6,5 +6,6 @@ export default class PhotosView {
     }
     initView() {
         console.log('init Photos View');
+        return $('<div id = "photos" class = "photos nine columns"><div>')
     }
 }
