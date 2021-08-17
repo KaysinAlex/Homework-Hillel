@@ -1,0 +1,17 @@
+body {
+    box-sizing: border-box;
+    height: 100vh;
+    width: 100vw;
+    cursor: pointer;
+}
+
+
+.album-item {
+  padding: 5px;
+  cursor: pointer;
+}
+
+.album-item:hover {
+  border: 1px solid lightyellow;
+}
+
