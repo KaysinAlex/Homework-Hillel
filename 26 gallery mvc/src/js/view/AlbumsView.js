@@ -8,6 +8,8 @@ export default class AlbumsView {
        
     }
     initView() {
-         console.log('Init Albums View');
+        console.log('Init Albums View');
+         return $('<div id = "albums" class = "albums three columns"></div>')
+            .on('click', '.album-item', (e) => this.config.onAlbumsSelect($(e.target).data('id')));
     }
 }
