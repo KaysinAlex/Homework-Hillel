@@ -5,6 +5,9 @@ export default class AlbumsView {
         this.config = config;
         this.$el = this.initView();
 
-        console.log('Init Albums View');
+       
+    }
+    initView() {
+         console.log('Init Albums View');
     }
 }

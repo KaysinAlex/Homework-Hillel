@@ -1,4 +1,4 @@
-import AlbumsView from "./view/AlbumsView";
+import AlbumsView from "../view/AlbumsView";
 
 
 export default class AlbumsController {
