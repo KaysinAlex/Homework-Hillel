@@ -12,4 +12,8 @@ export default class AlbumsView {
          return $('<div id = "albums" class = "albums three columns"></div>')
             .on('click', '.album-item', (e) => this.config.onAlbumsSelect($(e.target).data('id')));
     }
+
+    renderList(list) {
+        console.log(list);
+    }
 }
