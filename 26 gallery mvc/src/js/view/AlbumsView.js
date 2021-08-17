@@ -22,7 +22,7 @@ export default class AlbumsView {
         )
     }
     generateAlbumHtml({ id, title }) {
-        console.log('generate Album Html',title);
+        console.log('generate Album Html',id);
         return `<div class="album-item" data-id = "${id}">${title}</div>`;
     }
 }
