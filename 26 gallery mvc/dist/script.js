@@ -26,7 +26,7 @@ eval("var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!\n * jQ
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ AlbumsController)\n/* harmony export */ });\n/* harmony import */ var _view_PhotosView__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../view/PhotosView */ \"./src/js/view/PhotosView.js\");\n/* harmony import */ var _view_AlbumsView__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../view/AlbumsView */ \"./src/js/view/AlbumsView.js\");\n\r\n\r\n\r\n\r\nclass AlbumsController {\r\n    constructor($container) {\r\n        console.log('Init Albums Controller');\r\n        this.$container = $container;\r\n\r\n        this.albumsView = new _view_AlbumsView__WEBPACK_IMPORTED_MODULE_1__.default({\r\n            onAlbumsSelect: (id) => this.getAlbumPhotos(id)\r\n        });\r\n\r\n        this.photosView = new _view_PhotosView__WEBPACK_IMPORTED_MODULE_0__.default({});\r\n\r\n    }\r\n    getAlbumPhotos(albumId) {\r\n        console.log(albumId);\r\n    }\r\n    \r\n}\n\n//# sourceURL=webpack://26-gallery-mvc/./src/js/Controller/AlbumsController.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ AlbumsController)\n/* harmony export */ });\n/* harmony import */ var _view_PhotosView__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../view/PhotosView */ \"./src/js/view/PhotosView.js\");\n/* harmony import */ var _view_AlbumsView__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../view/AlbumsView */ \"./src/js/view/AlbumsView.js\");\n/* harmony import */ var _Users_Nastya_Desktop_Front_End_Pro_26_gallery_mvc_src_js_model_AlbumsCollection__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../Users/Nastya/Desktop/Front-End  Pro/26 gallery mvc/src/js/model/AlbumsCollection */ \"../../Users/Nastya/Desktop/Front-End  Pro/26 gallery mvc/src/js/model/AlbumsCollection.js\");\n/* harmony import */ var _Users_Nastya_Desktop_Front_End_Pro_26_gallery_mvc_src_js_model_PhotosCollection__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../Users/Nastya/Desktop/Front-End  Pro/26 gallery mvc/src/js/model/PhotosCollection */ \"../../Users/Nastya/Desktop/Front-End  Pro/26 gallery mvc/src/js/model/PhotosCollection.js\");\n\r\n\r\n\r\n\r\n\r\n\r\nclass AlbumsController {\r\n    constructor($container) {\r\n        console.log('Init Albums Controller');\r\n        this.$container = $container;\r\n\r\n        this.albumsView = new _view_AlbumsView__WEBPACK_IMPORTED_MODULE_1__.default({\r\n            onAlbumsSelect: (id) => this.getAlbumPhotos(id)\r\n        });\r\n\r\n        this.photosView = new _view_PhotosView__WEBPACK_IMPORTED_MODULE_0__.default({});\r\n\r\n        this.$container\r\n            .append(this.albumsView.$el)\r\n            .append(this.photosView.$el);\r\n        \r\n        this.albumsCollection = new _Users_Nastya_Desktop_Front_End_Pro_26_gallery_mvc_src_js_model_AlbumsCollection__WEBPACK_IMPORTED_MODULE_2__.default();\r\n        this.photosCollection = new _Users_Nastya_Desktop_Front_End_Pro_26_gallery_mvc_src_js_model_PhotosCollection__WEBPACK_IMPORTED_MODULE_3__.default();\r\n\r\n        this.init();\r\n\r\n    }\r\n    init() {\r\n        this.albumsCollection.getList()\r\n            .then(() => {\r\n                this.albumsView.renderList(this.albumsCollection.list);\r\n                this.getAlbumPhotos(this.albumsCollection.list[0].id);\r\n            })\r\n            .catch((e) => {\r\n                console.log(e);\r\n            });    \r\n    }\r\n\r\n\r\n    getAlbumPhotos(albumId) {\r\n        this.photosCollection.gerPhotos(albumId).then(() => {\r\n            this.photosView.renderList(this.photosCollection.list);\r\n            \r\n            console.log('albumId', albumId);\r\n        });\r\n    }\r\n    \r\n}\n\n//# sourceURL=webpack://26-gallery-mvc/./src/js/Controller/AlbumsController.js?");
 
 /***/ }),
 
@@ -48,7 +48,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var jque
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ AlbumsView)\n/* harmony export */ });\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ \"./node_modules/jquery/dist/jquery.js\");\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);\n\r\n\r\nclass AlbumsView {\r\n    constructor(config) {\r\n        this.config = config;\r\n        this.$el = this.initView();\r\n\r\n       \r\n    }\r\n    initView() {\r\n        console.log('Init Albums View');\r\n         return jquery__WEBPACK_IMPORTED_MODULE_0___default()('<div id = \"albums\" class = \"albums three columns\"></div>')\r\n            .on('click', '.album-item', (e) => this.config.onAlbumsSelect(jquery__WEBPACK_IMPORTED_MODULE_0___default()(e.target).data('id')));\r\n    }\r\n}\n\n//# sourceURL=webpack://26-gallery-mvc/./src/js/view/AlbumsView.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ AlbumsView)\n/* harmony export */ });\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ \"./node_modules/jquery/dist/jquery.js\");\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);\n\r\n\r\nclass AlbumsView {\r\n    constructor(config) {\r\n        this.config = config;\r\n        this.$el = this.initView();\r\n\r\n       \r\n    }\r\n    initView() {\r\n        console.log('Init Albums View');\r\n         return jquery__WEBPACK_IMPORTED_MODULE_0___default()('<div id = \"albums\" class = \"albums three columns\"></div>')\r\n            .on('click', '.album-item', (e) => this.config.onAlbumsSelect(jquery__WEBPACK_IMPORTED_MODULE_0___default()(e.target).data('id')));\r\n    }\r\n\r\n    renderList(list) {\r\n        console.log(list);\r\n    }\r\n}\n\n//# sourceURL=webpack://26-gallery-mvc/./src/js/view/AlbumsView.js?");
 
 /***/ }),
 
@@ -60,6 +60,50 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ PhotosView)\n/* harmony export */ });\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ \"./node_modules/jquery/dist/jquery.js\");\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);\n\r\n\r\nclass PhotosView {\r\n    constructor() {\r\n        this.$el = this.initView();\r\n        console.log('initPhotosView ');\r\n    }\r\n    initView() {\r\n        console.log('init Photos View');\r\n        return jquery__WEBPACK_IMPORTED_MODULE_0___default()('<div id = \"photos\" class = \"photos nine columns\"><div>')\r\n    }\r\n    renderList(list) {\r\n        console.log('render Photos List');\r\n        this.$el.html(\r\n            list.map((photo) => this.generatePhotoHtml(photo))\r\n                .join('\\n')\r\n        )\r\n    }\r\n    generatePhotoHtml({thumbnailUrl, title}) {\r\n        console.log('generate Photo Html');\r\n        return `<img class=\"photo-item\" src = \"${thumbnailUrl}\" alt =\"${title}\"/>`;\r\n    }\r\n}\n\n//# sourceURL=webpack://26-gallery-mvc/./src/js/view/PhotosView.js?");
+
+/***/ }),
+
+/***/ "../../Users/Nastya/Desktop/Front-End  Pro/26 gallery mvc/src/js/config.js":
+/*!*********************************************************************************!*\
+  !*** ../../Users/Nastya/Desktop/Front-End  Pro/26 gallery mvc/src/js/config.js ***!
+  \*********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"ALBUMS_URL\": () => (/* binding */ ALBUMS_URL),\n/* harmony export */   \"PHOTOS_URL\": () => (/* binding */ PHOTOS_URL)\n/* harmony export */ });\nconst ALBUMS_URL = 'https://jsonplaceholder.typicode.com/albums';\r\n\r\nconst PHOTOS_URL = 'https://jsonplaceholder.typicode.com/photos?albumId=';\r\n\r\nconsole.log('config work');\r\n\r\n\n\n//# sourceURL=webpack://26-gallery-mvc/../../Users/Nastya/Desktop/Front-End__Pro/26_gallery_mvc/src/js/config.js?");
+
+/***/ }),
+
+/***/ "../../Users/Nastya/Desktop/Front-End  Pro/26 gallery mvc/src/js/model/AlbumsCollection.js":
+/*!*************************************************************************************************!*\
+  !*** ../../Users/Nastya/Desktop/Front-End  Pro/26 gallery mvc/src/js/model/AlbumsCollection.js ***!
+  \*************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ AlbumsCollection)\n/* harmony export */ });\n/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../config */ \"../../Users/Nastya/Desktop/Front-End  Pro/26 gallery mvc/src/js/config.js\");\n/* harmony import */ var _BaseCollection__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./BaseCollection */ \"../../Users/Nastya/Desktop/Front-End  Pro/26 gallery mvc/src/js/model/BaseCollection.js\");\n\r\n\r\n\r\nclass AlbumsCollection extends _BaseCollection__WEBPACK_IMPORTED_MODULE_1__.default {\r\n    constructor() {\r\n        super();\r\n        this._url = _config__WEBPACK_IMPORTED_MODULE_0__.ALBUMS_URL;\r\n        console.log('Albums Collection')\r\n    }\r\n}\n\n//# sourceURL=webpack://26-gallery-mvc/../../Users/Nastya/Desktop/Front-End__Pro/26_gallery_mvc/src/js/model/AlbumsCollection.js?");
+
+/***/ }),
+
+/***/ "../../Users/Nastya/Desktop/Front-End  Pro/26 gallery mvc/src/js/model/BaseCollection.js":
+/*!***********************************************************************************************!*\
+  !*** ../../Users/Nastya/Desktop/Front-End  Pro/26 gallery mvc/src/js/model/BaseCollection.js ***!
+  \***********************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ BaseCollection)\n/* harmony export */ });\nclass BaseCollection{\r\n    constructor() {\r\n        this.list = [];\r\n        this._url = null;\r\n    }\r\n    getList() {\r\n        return fetch(this._url)\r\n            .then((resp) => resp.json())\r\n            .then((data) => this.setData(data));\r\n    }\r\n    setData(data) {\r\n        this.list = data;\r\n    }\r\n}\n\n//# sourceURL=webpack://26-gallery-mvc/../../Users/Nastya/Desktop/Front-End__Pro/26_gallery_mvc/src/js/model/BaseCollection.js?");
+
+/***/ }),
+
+/***/ "../../Users/Nastya/Desktop/Front-End  Pro/26 gallery mvc/src/js/model/PhotosCollection.js":
+/*!*************************************************************************************************!*\
+  !*** ../../Users/Nastya/Desktop/Front-End  Pro/26 gallery mvc/src/js/model/PhotosCollection.js ***!
+  \*************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ PhotosCollection)\n/* harmony export */ });\n/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../config */ \"../../Users/Nastya/Desktop/Front-End  Pro/26 gallery mvc/src/js/config.js\");\n/* harmony import */ var _BaseCollection__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./BaseCollection */ \"../../Users/Nastya/Desktop/Front-End  Pro/26 gallery mvc/src/js/model/BaseCollection.js\");\n\r\n\r\n\r\nclass PhotosCollection extends _BaseCollection__WEBPACK_IMPORTED_MODULE_1__.default {\r\n    getPhotos(albumId) {\r\n        this._url = _config__WEBPACK_IMPORTED_MODULE_0__.PHOTOS_URL + albumId;\r\n        console.log(_config__WEBPACK_IMPORTED_MODULE_0__.PHOTOS_URL + albumId);\r\n        console.log(albumId);\r\n        console.log('getPhotos Collection');\r\n\r\n        return super.getList();\r\n    }\r\n}\n\n//# sourceURL=webpack://26-gallery-mvc/../../Users/Nastya/Desktop/Front-End__Pro/26_gallery_mvc/src/js/model/PhotosCollection.js?");
 
 /***/ })
 

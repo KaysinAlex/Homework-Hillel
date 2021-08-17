@@ -1,7 +1,7 @@
 import PhotosView from "../view/PhotosView";
 import AlbumsView from "../view/AlbumsView";
-import AlbumsCollection from "../../../../../Users/Nastya/Desktop/Front-End  Pro/26 gallery mvc/src/js/model/AlbumsCollection";
-import PhotosCollection from "../../../../../Users/Nastya/Desktop/Front-End  Pro/26 gallery mvc/src/js/model/PhotosCollection";
+import AlbumsCollection from "../model/AlbumsCollection";
+import PhotosCollection from "../model/PhotosCollection";
 
 
 export default class AlbumsController {
@@ -23,8 +23,8 @@ export default class AlbumsController {
         this.photosCollection = new PhotosCollection();
 
         this.init();
-
     }
+
     init() {
         this.albumsCollection.getList()
             .then(() => {
