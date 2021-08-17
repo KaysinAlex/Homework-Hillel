@@ -38,7 +38,7 @@ export default class AlbumsController {
 
 
     getAlbumPhotos(albumId) {
-        this.photosCollection.gerPhotos(albumId).then(() => {
+        this.photosCollection.getPhotos(albumId).then(() => {
             this.photosView.renderList(this.photosCollection.list);
             
             console.log('albumId', albumId);
