@@ -7,12 +7,17 @@
     <title>test</title>
     <link rel="stylesheet" href="./styles.css">
     <script src="./ChatSocket.js" defer></script>
-    <script src="./FormChat.js" defer></script>
+    <script src="./FormChatController.js" defer></script>
     <script src="./app.js" defer></script>
 </head>
 <body>
-   
-       <div class="circle"></div>
-    
+    <form name="chat-form">
+        <input type="color" id="color">
+        <input type="number" id="size">
+        <input type="submit" id="submit-btn"/>
+    </form>
+        <div id="chatMessages">
+            <div class="circle"></div>
+         </div>
 </body>
 </html>
