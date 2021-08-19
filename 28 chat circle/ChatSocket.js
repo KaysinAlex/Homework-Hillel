@@ -1,8 +1,4 @@
-// class ChatSocket {
-//     constructor(url) {
-//         this.url = url
-//     }
-// }
+
 
 const url = 'wss://fep-app.herokuapp.com/';
 let socket = null;
