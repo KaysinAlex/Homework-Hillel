@@ -4,7 +4,7 @@ const chatForm = document.forms['chat-forms']
 
 
 const chatSocket = new ChatSocket(url);
-const chatControler = new FornChatController(chatForm, listMessages, chatSocket);
+const chatControler = new FormChatController(chatForm, listMessages, chatSocket);
 chatControler.start();
 
 // const circleEl = document.querySelector('.circle');
