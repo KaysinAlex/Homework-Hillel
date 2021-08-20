@@ -1,8 +1,9 @@
 const url = 'wss://fep-app.herokuapp.com/';
-const chatMessages = document.getElementById('chatMessages');
-const chatForm = document.forms['chat-forms']
-
-
+const chatMessages = document.getElementById('chat-messages');
+const chatForm = document.forms['chat-forms'];
+const size = document.getElementById('size');
+const color = document.getElementById('color');
+const uniqueID = Date.now();
 const chatSocket = new ChatSocket(url);
 const chatControler = new FormChatController(chatForm, chatMessages, chatSocket);
 chatControler.start();

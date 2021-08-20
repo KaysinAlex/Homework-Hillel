@@ -7,7 +7,7 @@ class ChatSocket{
         socket.onopen = config.onOpen;
         socket.onmessage = config.onMessage;
         socket.onclose = config.onClose;
-        socket.onerror = config.onerror;
+        socket.onerror = config.onError;
         return socket;
     }
     sendSocketMessage(socket, message) {
