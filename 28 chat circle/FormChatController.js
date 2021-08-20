@@ -1,3 +1,9 @@
+    
+    
+
+
+
+
 /* class FormChatController {
     constructor(
         chatForm, chatMessagesElement,
@@ -78,7 +84,7 @@
             JSON.stringify({
                 type: 'update',
                 payload: {
-                    id: this.uniqueID,
+                    id: uniqueID,
                     color,
                     size,
                     top,

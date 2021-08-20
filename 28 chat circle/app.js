@@ -35,9 +35,6 @@ function onMouseDown(e) {
 
 console.log(socket);
 
-
-
-
 /* const url = 'wss://fep-app.herokuapp.com/';
 const chatMessages = document.getElementById('chat-messages');
 const chatForm = document.forms['chat-forms'];
