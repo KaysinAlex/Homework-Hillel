@@ -4,7 +4,7 @@
 
 
 
- class FormChatController {
+/* class FormChatController {
     constructor(
         chatForm, chatMessagesElement,
         chatSocket
@@ -107,4 +107,4 @@
     }  
 
  }
- 
+ */

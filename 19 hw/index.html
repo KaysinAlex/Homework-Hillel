@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>19hw list contacts</title>
+        <link rel="stylesheet" href="./styles.css" />
+        <script src="./app.js" defer></script>
+  </head>
+  <body>
+     <!-- Дз 19 список контактов  -->
+     <table class="table">
+       <thead>
+        <h1 class="title">Contacts list</h1>
+        <tr class="input">
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone number</th>
+          <th>Add \ Delete</th>
+          <th>Rename</th>
+        </tr>
+        </thead>
+
+      <tbody id="contactsList">
+
+      </tbody>
+
+      <tfoot>
+        <tr>          
+          <td>
+            <input type="hidden" id="contactId" />
+            <input type="text" id="nameInput" placeholder="Name" /></td>
+          <td> <input type="text" id="emailInput" placeholder="email" /></td>
+          <td><input type="tel" id="phoneInput" placeholder="Phone number" /></td>
+          <td><button id="addContactButton">Add</button></td>
+          <td><button id="renameContactButton">Rename</button> </td>
+        </tr>
+      </tfoot>
+       
+    </table>
+
+    <script id="newContactTemplate" type="text/template">
+       <tr class="contact-item" data-contact-id="{{id}}">
+                <td class="data">{{name}}</td>
+                <td class="data">{{phone}}</td>
+                <td class="data">{{email}}</td>
+            <td><button class="delete-btn"> delete</button></td>
+            <td><button class="rename-btn"> rename</button></td>
+          </tr>
+    </script>
+  </body>
+</html>

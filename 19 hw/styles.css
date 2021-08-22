@@ -1,0 +1,82 @@
+
+.delete-btn { 
+    width: 100px;
+    font-size: 14px;
+    line-height: 1.22;
+    color: black;
+    text-align: center;    
+    border: 1px solid black;    
+    padding: 2px;
+    background-color: #c7e7e9;   
+}
+
+#addContactButton {
+    width: 100px;
+    font-size: 14px;
+    line-height: 1.22;
+    color: black;
+    text-align: center;    
+    border: 1px solid black;    
+    padding: 2px;
+    background-color: #c7e7e9;
+} 
+
+.data {
+    border: 1px  solid black;
+    text-align: center;
+    font-size: 16px;
+    background-color: rgb(194, 245, 228);
+}
+
+.title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-align: center;
+    background-color: rgb(240, 179, 179);
+}
+ 
+.table {
+    width: 600px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 20px;
+}
+
+.input {
+    font-size: 18px;
+    font-weight: bold; 
+    background-color: rgb(240, 197, 140);   
+}
+
+
+
+
+
+
+
+/* * {
+  box-sizing: border-box;
+}
+h1 {
+  text-align: center;
+  box-shadow: 0 0 5 0;
+  font-family: monospace;
+  background-color: aqua;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+th,
+td {
+  text-align: left;
+  padding: 8px;
+  font-family: cursive;
+}
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+  
+} */
