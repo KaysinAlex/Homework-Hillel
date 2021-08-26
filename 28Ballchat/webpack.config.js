@@ -9,27 +9,21 @@ module.exports = {
         filename: 'app.js',
         path: path.resolve(__dirname, 'dist'),
     },
-         devServer: {
+      devServer: {
       contentBase: path.join(__dirname, "dist"),
       compress: true,
       port: 3000,
     },
     module: {
-    rules: [
-      {
-        test: /\.css$/,
-        use: [
-          'style-loader',
-          'css-loader'
-        ]
-      },
-     
-    ]
-  },
+      rules: [
+        {
+          test: /\.css$/i,
+          use: ['style-loader','css-loader'],
+        },
+      ],
+    },
 
   plugins: [
-    new HtmlWebpackPlugin({
-      template: './index.html'
-    })
-  ]
+    new HtmlWebpackPlugin({template: './index.html'})
+  ],
 };
