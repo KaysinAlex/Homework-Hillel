@@ -1,9 +1,6 @@
+import './style.css';
 const url = 'wss://fep-app.herokuapp.com/';
 let socket = null;
-
-
-
-
 
 let myBall = {
     id: Date.now(),
@@ -57,6 +54,7 @@ document
 }
     
     function send(msg) {
+        console.log('send -> msg', msg);
         if (socket.readyState === WebSocket.OPEN) {
             socket.send(JSON.stringify(msg));
         }
@@ -89,7 +87,6 @@ function pushBall(ball) {
     balls.push(ball);
 
     renderBall(ball);
-    console.log('pushBall -> ball', ball);
 }
 
 function updateBall(ball) {
@@ -100,7 +97,7 @@ function updateBall(ball) {
     }
 
     updateBallElement(renderedBall.el, ball);
-    console.log('updateBall -> renderedBall.el', renderedBall.el);
+    console.log('updateBall -> renderedBall.el');
 }
 
 function updateMyBall(changes ) {
@@ -136,7 +133,6 @@ function createBallElement(ball) {
 
 function updateBallElement(el, ball) {
     console.log('updateBallElement -> ball', ball);
-    console.log('updateBallElement -> el', el);
     el.style.top = ball.y - ball.size / 2 + 'px';
     el.style.left = ball.x - ball.size / 2 + 'px';
     el.style.height = ball.size + 'px';
